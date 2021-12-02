@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="base_click_timestamp" type="id" />
+
+    <item name="tvText" type="id" />
+    <item name="progressBar" type="id" />
+    <item name="tvTitle" type="id" />
+    <item name="mbNegative" type="id" />
+    <item name="tvContent" type="id" />
+    <item name="viewDivider" type="id" />
+    <item name="mbPositive" type="id" />
+</resources>

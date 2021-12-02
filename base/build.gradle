@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk Versions.compileSdk
+
+    defaultConfig {
+        minSdk Versions.minSdk
+        targetSdk Versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/kotlin']
+        }
+    }
+    lintOptions {
+        disable 'SpUsage', 'RtlHardcoded'
+    }
+}
+
+dependencies {
+    // 测试、Debug
+    testImplementation Deps.junit
+    androidTestImplementation Deps.extJunit
+    androidTestImplementation Deps.espresso
+
+    api Deps.coroutinesAndroid
+    api Deps.coreKtx
+    api Deps.appcompat
+    api Deps.materialDesign
+    api Deps.constraintLayout
+    api Deps.navigationFragmentKtx
+
+    // 网络请求框架：Retrofit + Gson
+    api Deps.gson
+    api Deps.retrofit2
+    api Deps.retrofit2ConverterGson
+    api Deps.okHttpLogging
+}

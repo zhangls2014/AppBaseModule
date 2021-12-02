@@ -1,0 +1,327 @@
+dependencies {
+    /* readme *
+    *
+    * 为了统一管理插件/依赖库版本，避免版本冲突，统一将插件/依赖库信息配置在此文件中，
+    * 通过 gradlew updateDependencies task
+    * 解析此文件生成对应内容到 Deps.groovy 中进行统一引用
+    *
+    * <version> </version> 之间是一些版本的配置 ，解析后会放到 Deps.groovy 的 interface Versions 中
+    *
+    * <plugin> </plugin> 之间是插件引用路径 ，直接同步到项目根目录 build.gradle 中
+    *
+    * <dep> </dep> 之间是依赖库引用路径 ，解析后会放到 Deps.groovy 的 interface Deps 中
+    *
+    * 更新配置后执行以下方法同步更新到 Deps.groovy：
+    *  方法一：在控制台执行：gradlew updateDependencies
+    *  方法二：在右侧 gradle 面板找到 task:updateDependencies 双击执行。
+    */
+
+    /**
+     * version 部分
+     *
+     * 版本配置格式：def <name> = <value>
+     */
+
+    /*<version>*/
+
+    def buildTool = '31.0.0'
+    def minSdk = 21
+    def targetSdk = 30
+    def compileSdk = 30
+
+    /*</version>*/
+
+
+    /**
+     * 插件路径部分
+     * 配置插件引用路径时以 implementation 作为开头
+     */
+
+    /*<plugin>*/
+    implementation 'com.android.tools.build:gradle:7.0.3'
+    implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+    implementation 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+    //https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md
+    implementation 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.17'
+    implementation 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5'
+    //https://detekt.github.io/detekt/
+    implementation 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.16.0'
+    //https://github.com/kezong/fat-aar-android
+    implementation 'com.github.kezong:fat-aar:1.3.6'
+
+    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.37'
+
+    /*</plugin>*/
+
+
+    /**
+     * 依赖库路径部分
+     * 配置依赖库引用路径时以 implementation 作为开头
+     * 配置依赖库引用路径前备注格式： //<依赖库名> : <备注>，这个部分会被解析确定依赖库引用名称
+     */
+
+    /*<dep>*/
+
+    /*
+     * test
+     */
+    //junit
+    implementation 'junit:junit:4.13.2'
+    //runner
+    implementation 'androidx.test:runner:1.4.0'
+    //extJunit
+    implementation 'androidx.test.ext:junit:1.1.3'
+    //espresso
+    implementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    /*
+     * androidx
+     */
+    //appcompat
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    //fragment
+    implementation 'androidx.fragment:fragment-ktx:1.3.5'
+    //activity
+    implementation 'androidx.activity:activity:1.3.1'
+    //andAnnotations
+    implementation 'androidx.annotation:annotation:1.2.0'
+    //materialDesign
+    implementation 'com.google.android.material:material:1.4.0'
+    //cardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //recyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    //transition
+    implementation 'androidx.transition:transition:1.4.1'
+    //constraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //coreKtx
+    implementation 'androidx.core:core-ktx:1.6.0'
+    //preference
+    implementation 'androidx.preference:preference:1.1.1'
+    //viewpager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    /*
+     * lifecycle
+     */
+    //lifecycleCommonJava8 : if using Java8, use the following instead of compiler
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
+    //lifecycleViewModelSavedState :ViewModel新出的状态保存库
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1'
+    //viewModel :alternatively - just ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    //liveData :alternatively - just LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+
+    /*
+     * cameraX
+     */
+    //cameraXCore
+    implementation "androidx.camera:camera-core:1.0.1"
+    //cameraXCamera2
+    implementation "androidx.camera:camera-camera2:1.0.1"
+    //cameraXLifecycle
+    implementation "androidx.camera:camera-lifecycle:1.0.1"
+    //cameraXView
+    implementation 'androidx.camera:camera-view:1.0.0-alpha27'
+    //cameraXExtensions
+    implementation "androidx.camera:camera-extensions:1.0.0-alpha27"
+
+    /**
+     * hilt
+     */
+    //hilt
+    implementation "com.google.dagger:hilt-android:2.33-beta"
+    //hiltCompiler
+    implementation "com.google.dagger:hilt-android-compiler:2.33-beta"
+
+
+    /**
+     * navigation
+     */
+    //navigationFragmentKtx
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    //navigationUI
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+
+    /*
+     * google
+     */
+    //pagingRuntime
+    implementation 'androidx.paging:paging-runtime-ktx:3.0.0'
+
+    //flexBox : https://github.com/google/flexbox-layout
+    implementation 'com.google.android:flexbox:2.0.0'
+    //gson : https://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    //kotlinAndroidExtensions :插件
+    implementation 'org.jetbrains.kotlin:kotlin-android-extensions:1.5.31'
+    //kotlinStdlib
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+    //kotlinStdlibJdk8
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
+    //coroutinesAndroid
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+
+    /*
+     * 模块化框架
+     */
+    //appJoint : https://github.com/PrototypeZ/AppJoint/blob/master/README_zh.md
+    implementation 'io.github.prototypez:app-joint:1.7'
+    //appJointCore
+    implementation 'io.github.prototypez:app-joint-core:1.7'
+
+    /*
+     * retrofit2
+     */
+    //retrofit2 : https://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //retrofit2ConverterGson
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //okHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    //okHttpLogging
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.2'
+    //okio
+    implementation 'com.squareup.okio:okio:2.10.0'
+
+    //multiType
+    implementation 'com.drakeet.multitype:multitype:4.2.0'
+    //swipeRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //slf4j
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+
+    /**
+     * room
+     */
+    //roomRuntime
+    implementation 'androidx.room:room-runtime:2.4.0-alpha04'
+    //roomCompiler
+    implementation 'androidx.room:room-compiler:2.4.0-alpha04'
+    //roomKtx : Kotlin Extensions and Coroutines support for Room
+    implementation 'androidx.room:room-ktx:2.4.0-alpha04'
+
+    //tencentIM
+    implementation 'com.tencent.imsdk:imsdk:5.1.50'
+
+    /*
+     * 路由
+     */
+    //aRouterApi : https://github.com/alibaba/ARouter
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    //aRouterCompiler
+    implementation 'com.alibaba:arouter-compiler:1.2.2'
+
+    /*
+     * 图片加载
+     */
+    //coil : https://github.com/coil-kt/coil
+    implementation 'io.coil-kt:coil:1.1.1'
+    //coilBase
+    implementation 'io.coil-kt:coil-base:1.1.1'
+    //coilGif
+    implementation 'io.coil-kt:coil-gif:1.1.1'
+    //coilSVG
+    implementation 'io.coil-kt:coil-svg:1.1.1'
+
+    /*
+     * bug反馈
+     */
+    //bugly
+    implementation 'com.tencent.bugly:crashreport:3.4.4'
+    //buglyNDK
+    implementation 'com.tencent.bugly:nativecrashreport:3.9.0'
+
+    /**
+     * Web 浏览器
+     */
+    //tencentX5 : https://x5.tencent.com/docs/access.html
+    implementation 'com.tencent.tbs.tbssdk:sdk:43939'
+
+    //weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
+
+    //ZXingLite : https://github.com/jenly1314/ZXingLite
+    implementation 'com.github.jenly1314:zxing-lite:2.1.1'
+
+    //MLKitCore : https://github.com/jenly1314/MLKit，Camera核心 (*必须项)
+    implementation 'com.github.jenly1314.MLKit:mlkit-camera-core:1.0.2'
+
+    //MLKitBarcode : https://github.com/jenly1314/MLKit，条码识别 (可选项)
+    implementation 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.0.2'
+
+    //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+
+    //exoPlayer: https://github.com/google/ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.14.1'
+    //exoCore: https://github.com/google/ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.14.2'
+    //exoUI: https://github.com/google/ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.2'
+
+    /*
+     * 自定义view
+     */
+    //discreteScrollview : https://github.com/yarolegovich/DiscreteScrollView
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+    //easySwipeMenuLayout : https://github.com/anzaizai/EasySwipeMenuLayout
+    implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'
+    //swipeDelMenuLayout :侧滑删除 https://github.com/mcxtzhang/SwipeDelMenuLayout/blob/master/README-cn.md
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    //swipeBack
+    implementation 'n.simonlee.widget:swipeback:1.0.15'
+    //banner : https://github.com/youth5201314/banner
+    implementation 'io.github.youth5201314:banner:2.2.2'
+    //photoView : https://github.com/chrisbanes/PhotoViewƒ
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    //androidPickerView : 时间,地址选择器 https://github.com/Bigkoo/Android-PickerView
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    //switchButton : https://github.com/kyleduo/SwitchButton
+    implementation 'com.kyleduo.switchbutton:library:2.1.0'
+
+    //tencentTRTC
+    implementation 'com.tencent.liteav:LiteAVSDK_TRTC:9.2.10641'
+
+    //eventBus : https://github.com/greenrobot/EventBus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    /*
+     * 权限
+     */
+    //andPermission : https://github.com/yanzhenjie/AndPermission
+    implementation 'com.yanzhenjie:permission:2.0.3'
+
+    //mmkv : 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
+    implementation 'com.tencent:mmkv-static:1.2.8'
+
+    //betterLinkMovementMethod : 自定义 LinkMovementMethod，支持点击和长按操作
+    implementation 'me.saket:better-link-movement-method:2.2.0'
+
+    //AutoSize : https://github.com/JessYanCoding/AndroidAutoSize
+    implementation 'me.jessyan:autosize:1.2.0'
+
+    //FitAndroid8 : Android 7/8 FileProvider适配 https://github.com/steven2947/FitAndroid8
+    implementation 'com.github.steven2947:FitAndroid8:0.5.0'
+
+    /*
+    * 测试工具
+    */
+    //leakCanaryAndroid : https://github.com/square/leakcanary
+    implementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    //blockCanaryAndroid :卡顿监控和提示 https://github.com/markzhai/AndroidPerformanceMonitor
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+
+    //timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    /*</dep>*/
+}

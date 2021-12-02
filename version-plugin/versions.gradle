@@ -39,7 +39,7 @@ dependencies {
 
     /*<plugin>*/
     implementation 'com.android.tools.build:gradle:7.0.3'
-    implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+    implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0'
     implementation 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     //https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md
     implementation 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.17'
@@ -157,9 +157,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.8'
 
     //kotlinAndroidExtensions :插件
-    implementation 'org.jetbrains.kotlin:kotlin-android-extensions:1.5.31'
+    implementation 'org.jetbrains.kotlin:kotlin-android-extensions:1.6.0'
     //kotlinStdlib
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
     //kotlinStdlibJdk8
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
     //coroutinesAndroid

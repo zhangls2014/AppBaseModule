@@ -107,9 +107,9 @@ interface Deps {
     String gson = 'com.google.code.gson:gson:2.8.8'
 
     //kotlinAndroidExtensions :插件
-    String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.5.31'
+    String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.6.0'
     //kotlinStdlib
-    String kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+    String kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
     //kotlinStdlibJdk8
     String kotlinStdlibJdk8 = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
     //coroutinesAndroid

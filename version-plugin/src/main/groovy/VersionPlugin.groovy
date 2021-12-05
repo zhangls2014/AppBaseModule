@@ -4,8 +4,8 @@
 interface Versions {
     def buildTool = '31.0.0'
     def minSdk = 21
-    def targetSdk = 30
-    def compileSdk = 30
+    def targetSdk = 31
+    def compileSdk = 31
 }
 
 /**
@@ -90,30 +90,38 @@ interface Deps {
     /**
      * navigation
      */
-    //navigationFragmentKtx
-    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    //navigationFragment
+    String navigationFragment = 'androidx.navigation:navigation-fragment:2.4.0-beta02'
     //navigationUI
-    String navigationUI = "androidx.navigation:navigation-ui-ktx:2.3.5"
+    String navigationUI = "androidx.navigation:navigation-ui:2.4.0-beta02"
+
+    //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
+    String flowEventBus = 'com.github.biubiuqiu0:flow-event-bus:0.0.2'
+
+    //agentWeb
+    String agentWeb = 'com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx'
+    //agentWebFileChooser
+    String agentWebFileChooser = 'com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.0-alpha.1-androidx'
 
     /*
      * google
      */
     //pagingRuntime
-    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.0.0'
+    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.0.1'
 
     //flexBox : https://github.com/google/flexbox-layout
     String flexBox = 'com.google.android:flexbox:2.0.0'
     //gson : https://github.com/google/gson
-    String gson = 'com.google.code.gson:gson:2.8.8'
+    String gson = 'com.google.code.gson:gson:2.8.9'
 
     //kotlinAndroidExtensions :插件
     String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.6.0'
     //kotlinStdlib
     String kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
     //kotlinStdlibJdk8
-    String kotlinStdlibJdk8 = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
+    String kotlinStdlibJdk8 = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0'
     //coroutinesAndroid
-    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     /*
      * 模块化框架
@@ -138,7 +146,7 @@ interface Deps {
     String okio = 'com.squareup.okio:okio:2.10.0'
 
     //multiType
-    String multiType = 'com.drakeet.multitype:multitype:4.2.0'
+    String multiType = 'com.drakeet.multitype:multitype:4.3.0'
     //swipeRefreshLayout
     String swipeRefreshLayout = 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
@@ -149,11 +157,11 @@ interface Deps {
      * room
      */
     //roomRuntime
-    String roomRuntime = 'androidx.room:room-runtime:2.4.0-alpha04'
+    String roomRuntime = 'androidx.room:room-runtime:2.4.0-alpha05'
     //roomCompiler
-    String roomCompiler = 'androidx.room:room-compiler:2.4.0-alpha04'
+    String roomCompiler = 'androidx.room:room-compiler:2.4.0-alpha05'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
-    String roomKtx = 'androidx.room:room-ktx:2.4.0-alpha04'
+    String roomKtx = 'androidx.room:room-ktx:2.4.0-alpha05'
 
     //tencentIM
     String tencentIM = 'com.tencent.imsdk:imsdk:5.1.50'
@@ -170,13 +178,21 @@ interface Deps {
      * 图片加载
      */
     //coil : https://github.com/coil-kt/coil
-    String coil = 'io.coil-kt:coil:1.1.1'
+    String coil = 'io.coil-kt:coil:1.4.0'
     //coilBase
-    String coilBase = 'io.coil-kt:coil-base:1.1.1'
+    String coilBase = 'io.coil-kt:coil-base:1.4.0'
     //coilGif
-    String coilGif = 'io.coil-kt:coil-gif:1.1.1'
+    String coilGif = 'io.coil-kt:coil-gif:1.4.0'
     //coilSVG
-    String coilSVG = 'io.coil-kt:coil-svg:1.1.1'
+    String coilSVG = 'io.coil-kt:coil-svg:1.4.0'
+
+    /*
+     * 权限
+     */
+    //permissionsDispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
+    String permissionsDispatcher = 'com.github.permissions-dispatcher:permissionsdispatcher:4.9.1'
+    //permissionsDispatcherProcessor
+    String permissionsDispatcherProcessor = 'com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1'
 
     /*
      * bug反馈
@@ -235,7 +251,7 @@ interface Deps {
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
 
     //tencentTRTC
-    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.2.10641'
+    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.3.10769'
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = 'org.greenrobot:eventbus:3.2.0'

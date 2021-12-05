@@ -49,7 +49,7 @@ dependencies {
     api Deps.appcompat
     api Deps.materialDesign
     api Deps.constraintLayout
-    api Deps.navigationFragmentKtx
+    api Deps.navigationFragment
 
     // 网络请求框架：Retrofit + Gson
     api Deps.gson

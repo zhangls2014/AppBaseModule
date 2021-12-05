@@ -26,8 +26,8 @@ dependencies {
 
     def buildTool = '31.0.0'
     def minSdk = 21
-    def targetSdk = 30
-    def compileSdk = 30
+    def targetSdk = 31
+    def compileSdk = 31
 
     /*</version>*/
 
@@ -140,30 +140,38 @@ dependencies {
     /**
      * navigation
      */
-    //navigationFragmentKtx
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    //navigationFragment
+    implementation 'androidx.navigation:navigation-fragment:2.4.0-beta02'
     //navigationUI
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui:2.4.0-beta02"
+
+    //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
+    implementation 'com.github.biubiuqiu0:flow-event-bus:0.0.2'
+
+    //agentWeb
+    implementation 'com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx'
+    //agentWebFileChooser
+    implementation 'com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.0-alpha.1-androidx'
 
     /*
      * google
      */
     //pagingRuntime
-    implementation 'androidx.paging:paging-runtime-ktx:3.0.0'
+    implementation 'androidx.paging:paging-runtime-ktx:3.0.1'
 
     //flexBox : https://github.com/google/flexbox-layout
     implementation 'com.google.android:flexbox:2.0.0'
     //gson : https://github.com/google/gson
-    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'com.google.code.gson:gson:2.8.9'
 
     //kotlinAndroidExtensions :插件
     implementation 'org.jetbrains.kotlin:kotlin-android-extensions:1.6.0'
     //kotlinStdlib
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
     //kotlinStdlibJdk8
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0'
     //coroutinesAndroid
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     /*
      * 模块化框架
@@ -188,7 +196,7 @@ dependencies {
     implementation 'com.squareup.okio:okio:2.10.0'
 
     //multiType
-    implementation 'com.drakeet.multitype:multitype:4.2.0'
+    implementation 'com.drakeet.multitype:multitype:4.3.0'
     //swipeRefreshLayout
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
@@ -199,11 +207,11 @@ dependencies {
      * room
      */
     //roomRuntime
-    implementation 'androidx.room:room-runtime:2.4.0-alpha04'
+    implementation 'androidx.room:room-runtime:2.4.0-alpha05'
     //roomCompiler
-    implementation 'androidx.room:room-compiler:2.4.0-alpha04'
+    implementation 'androidx.room:room-compiler:2.4.0-alpha05'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
-    implementation 'androidx.room:room-ktx:2.4.0-alpha04'
+    implementation 'androidx.room:room-ktx:2.4.0-alpha05'
 
     //tencentIM
     implementation 'com.tencent.imsdk:imsdk:5.1.50'
@@ -220,13 +228,21 @@ dependencies {
      * 图片加载
      */
     //coil : https://github.com/coil-kt/coil
-    implementation 'io.coil-kt:coil:1.1.1'
+    implementation 'io.coil-kt:coil:1.4.0'
     //coilBase
-    implementation 'io.coil-kt:coil-base:1.1.1'
+    implementation 'io.coil-kt:coil-base:1.4.0'
     //coilGif
-    implementation 'io.coil-kt:coil-gif:1.1.1'
+    implementation 'io.coil-kt:coil-gif:1.4.0'
     //coilSVG
-    implementation 'io.coil-kt:coil-svg:1.1.1'
+    implementation 'io.coil-kt:coil-svg:1.4.0'
+
+    /*
+     * 权限
+     */
+    //permissionsDispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
+    implementation 'com.github.permissions-dispatcher:permissionsdispatcher:4.9.1'
+    //permissionsDispatcherProcessor
+    implementation 'com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1'
 
     /*
      * bug反馈
@@ -285,7 +301,7 @@ dependencies {
     implementation 'com.kyleduo.switchbutton:library:2.1.0'
 
     //tencentTRTC
-    implementation 'com.tencent.liteav:LiteAVSDK_TRTC:9.2.10641'
+    implementation 'com.tencent.liteav:LiteAVSDK_TRTC:9.3.10769'
 
     //eventBus : https://github.com/greenrobot/EventBus
     implementation 'org.greenrobot:eventbus:3.2.0'

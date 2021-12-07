@@ -7,5 +7,5 @@ package com.zhangls.base.retrofit
  */
 sealed class ResponseResult<out T : Any> {
     data class Success<out T : Any>(val data: T) : ResponseResult<T>()
-    data class Error(val code: HttpCode, val type: ErrorType) : ResponseResult<Nothing>()
+    data class Error(val error: ResponseError) : ResponseResult<Nothing>()
 }

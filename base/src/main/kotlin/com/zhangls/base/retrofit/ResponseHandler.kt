@@ -20,26 +20,22 @@ class ResponseHandler {
         } catch (exception: HttpException) {
             exception.printStackTrace()
             ResponseResult.Error(
-                code = HttpCode.UnknownError(message = "请求异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
-                type = ErrorType.SERVICE_ERROR
+                error = ResponseError.UnknownError(message = "请求异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
             )
         } catch (exception: JsonSyntaxException) {
             exception.printStackTrace()
             ResponseResult.Error(
-                code = HttpCode.UnknownError(message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
-                type = ErrorType.RESPONSE_ERROR
+                error = ResponseError.UnknownError(message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
             )
         } catch (exception: MalformedJsonException) {
             exception.printStackTrace()
             ResponseResult.Error(
-                code = HttpCode.UnknownError(message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
-                type = ErrorType.RESPONSE_ERROR
+                error = ResponseError.UnknownError(message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
             )
         } catch (exception: Exception) {
             exception.printStackTrace()
             ResponseResult.Error(
-                code = HttpCode.UnknownError(message = "未知异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
-                type = ErrorType.NETWORK_ERROR
+                error = ResponseError.UnknownError(message = "未知异常[${exception.javaClass.simpleName} = ${exception.cause}]"),
             )
         }
     }

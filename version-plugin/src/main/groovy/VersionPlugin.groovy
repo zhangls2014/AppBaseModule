@@ -3,7 +3,7 @@
  */
 interface Versions {
     def buildTool = '31.0.0'
-    def minSdk = 21
+    def minSdk = 23
     def targetSdk = 31
     def compileSdk = 31
 }

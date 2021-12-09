@@ -7,20 +7,24 @@ import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
 import android.view.ViewPropertyAnimator
 import com.google.android.material.animation.AnimationUtils
+import java.lang.ref.WeakReference
 
 /**
  * @author zhangls
  */
-class HideBottomViewOnScrollBehavior(private val child: View) {
+class HideBottomViewOnScrollBehavior(child: View) {
     private var height = 0
     private var oldOffset = 0
     private var currentState = STATE_SCROLLED_UP
     private var currentAnimator: ViewPropertyAnimator? = null
-    private val paramsCompat = child.layoutParams as MarginLayoutParams
+    private val childView = WeakReference(child)
+    private val paramsCompat = childView.get()?.layoutParams as? MarginLayoutParams
 
 
     fun onVerticalScroll(verticalOffset: Int) {
-        height = child.measuredHeight + paramsCompat.bottomMargin
+        val measuredHeight =  childView.get()?.measuredHeight ?: 0
+        val bottomMargin = paramsCompat?.bottomMargin ?: 0
+        height = measuredHeight + bottomMargin
 
         if (oldOffset > verticalOffset) {
             slideDown()
@@ -37,12 +41,17 @@ class HideBottomViewOnScrollBehavior(private val child: View) {
         }
         if (currentAnimator != null) {
             currentAnimator!!.cancel()
-            child.clearAnimation()
+            childView.get()?.clearAnimation()
         }
         currentState = STATE_SCROLLED_UP
-        animateChildTo(
-            child, 0, ENTER_ANIMATION_DURATION.toLong(), AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR
-        )
+        childView.get()?.let {
+            animateChildTo(
+                it,
+                0,
+                ENTER_ANIMATION_DURATION.toLong(),
+                AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR
+            )
+        }
     }
 
     private fun slideDown() {
@@ -51,15 +60,17 @@ class HideBottomViewOnScrollBehavior(private val child: View) {
         }
         if (currentAnimator != null) {
             currentAnimator!!.cancel()
-            child.clearAnimation()
+            childView.get()?.clearAnimation()
         }
         currentState = STATE_SCROLLED_DOWN
-        animateChildTo(
-            child,
-            height,
-            EXIT_ANIMATION_DURATION.toLong(),
-            AnimationUtils.FAST_OUT_LINEAR_IN_INTERPOLATOR
-        )
+        childView.get()?.let {
+            animateChildTo(
+                it,
+                height,
+                EXIT_ANIMATION_DURATION.toLong(),
+                AnimationUtils.FAST_OUT_LINEAR_IN_INTERPOLATOR
+            )
+        }
     }
 
     private fun animateChildTo(child: View, targetY: Int, duration: Long, interpolator: TimeInterpolator) {

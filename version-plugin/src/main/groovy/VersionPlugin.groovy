@@ -56,13 +56,16 @@ interface Deps {
      * lifecycle
      */
     //lifecycleCommonJava8 : if using Java8, use the following instead of compiler
-    String lifecycleCommonJava8 = 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
+    String lifecycleCommonJava8 = 'androidx.lifecycle:lifecycle-common-java8:2.4.0'
     //lifecycleViewModelSavedState :ViewModel新出的状态保存库
-    String lifecycleViewModelSavedState = 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1'
+    String lifecycleViewModelSavedState = 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0'
     //viewModel :alternatively - just ViewModel
-    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
     //liveData :alternatively - just LiveData
-    String liveData = 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    String liveData = 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    //lifecycleRuntime
+    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+
 
     /*
      * cameraX

@@ -6,6 +6,6 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "AppBaseModule"
+rootProject.name = "BaseUtils"
 include ':base'
 includeBuild 'version-plugin'

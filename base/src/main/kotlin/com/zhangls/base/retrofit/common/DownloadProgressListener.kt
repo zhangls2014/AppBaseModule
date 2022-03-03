@@ -1,4 +1,4 @@
-package com.zhangls.base.retrofit
+package com.zhangls.base.retrofit.common
 
 /**
  * 下载进度回调

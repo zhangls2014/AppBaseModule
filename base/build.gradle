@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk Versions.compileSdk
+    buildToolsVersion Versions.buildTool
 
     defaultConfig {
         minSdk Versions.minSdk
@@ -46,7 +47,6 @@ dependencies {
 
     api Deps.coroutinesAndroid
     api Deps.coreKtx
-    api Deps.appcompat
     api Deps.materialDesign
     api Deps.constraintLayout
     api Deps.navigationFragment
@@ -56,4 +56,5 @@ dependencies {
     api Deps.retrofit2
     api Deps.retrofit2ConverterGson
     api Deps.okHttpLogging
+    api Deps.convex
 }

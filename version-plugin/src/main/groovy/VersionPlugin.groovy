@@ -2,7 +2,7 @@
  * 版本信息
  */
 interface Versions {
-    def buildTool = '31.0.0'
+    def buildTool = '32.0.0'
     def minSdk = 23
     def targetSdk = 31
     def compileSdk = 31
@@ -34,9 +34,9 @@ interface Deps {
     //activity
     String activity = 'androidx.activity:activity:1.3.1'
     //andAnnotations
-    String andAnnotations = 'androidx.annotation:annotation:1.2.0'
+    String andAnnotations = 'androidx.annotation:annotation:1.3.0'
     //materialDesign
-    String materialDesign = 'com.google.android.material:material:1.4.0'
+    String materialDesign = 'com.google.android.material:material:1.5.0'
     //cardView
     String cardView = 'androidx.cardview:cardview:1.0.0'
     //recyclerView
@@ -55,48 +55,31 @@ interface Deps {
     /*
      * lifecycle
      */
-    //lifecycleCommonJava8 : if using Java8, use the following instead of compiler
-    String lifecycleCommonJava8 = 'androidx.lifecycle:lifecycle-common-java8:2.4.0'
-    //lifecycleViewModelSavedState :ViewModel新出的状态保存库
-    String lifecycleViewModelSavedState = 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0'
-    //viewModel :alternatively - just ViewModel
-    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
-    //liveData :alternatively - just LiveData
-    String liveData = 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
     //lifecycleRuntime
-    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
 
     /*
      * cameraX
      */
     //cameraXCore
-    String cameraXCore = "androidx.camera:camera-core:1.0.1"
+    String cameraXCore = "androidx.camera:camera-core:1.0.2"
     //cameraXCamera2
-    String cameraXCamera2 = "androidx.camera:camera-camera2:1.0.1"
+    String cameraXCamera2 = "androidx.camera:camera-camera2:1.0.2"
     //cameraXLifecycle
-    String cameraXLifecycle = "androidx.camera:camera-lifecycle:1.0.1"
+    String cameraXLifecycle = "androidx.camera:camera-lifecycle:1.0.2"
     //cameraXView
-    String cameraXView = 'androidx.camera:camera-view:1.0.0-alpha27'
+    String cameraXView = 'androidx.camera:camera-view:1.0.0-alpha32'
     //cameraXExtensions
-    String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha27"
-
-    /**
-     * hilt
-     */
-    //hilt
-    String hilt = "com.google.dagger:hilt-android:2.33-beta"
-    //hiltCompiler
-    String hiltCompiler = "com.google.dagger:hilt-android-compiler:2.33-beta"
-
+    String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha32"
 
     /**
      * navigation
      */
     //navigationFragment
-    String navigationFragment = 'androidx.navigation:navigation-fragment:2.4.0-beta02'
+    String navigationFragment = 'androidx.navigation:navigation-fragment:2.4.1'
     //navigationUI
-    String navigationUI = "androidx.navigation:navigation-ui:2.4.0-beta02"
+    String navigationUI = "androidx.navigation:navigation-ui:2.4.1"
 
     //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
     String flowEventBus = 'com.github.biubiuqiu0:flow-event-bus:0.0.2'
@@ -110,19 +93,13 @@ interface Deps {
      * google
      */
     //pagingRuntime
-    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.0.1'
+    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.1.0'
 
     //flexBox : https://github.com/google/flexbox-layout
     String flexBox = 'com.google.android:flexbox:2.0.0'
     //gson : https://github.com/google/gson
     String gson = 'com.google.code.gson:gson:2.8.9'
 
-    //kotlinAndroidExtensions :插件
-    String kotlinAndroidExtensions = 'org.jetbrains.kotlin:kotlin-android-extensions:1.6.0'
-    //kotlinStdlib
-    String kotlinStdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.6.0'
-    //kotlinStdlibJdk8
-    String kotlinStdlibJdk8 = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0'
     //coroutinesAndroid
     String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
@@ -142,9 +119,9 @@ interface Deps {
     //retrofit2ConverterGson
     String retrofit2ConverterGson = 'com.squareup.retrofit2:converter-gson:2.9.0'
     //okHttp
-    String okHttp = 'com.squareup.okhttp3:okhttp:4.9.2'
+    String okHttp = 'com.squareup.okhttp3:okhttp:4.9.3'
     //okHttpLogging
-    String okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.9.2'
+    String okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.9.3'
     //okio
     String okio = 'com.squareup.okio:okio:2.10.0'
 
@@ -154,20 +131,28 @@ interface Deps {
     String swipeRefreshLayout = 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     //slf4j
-    String slf4j = 'org.slf4j:slf4j-api:1.7.30'
+    String slf4j = 'org.slf4j:slf4j-api:1.7.32'
+
+    //mavericks : https://github.com/airbnb/mavericks
+    String mavericks = 'com.airbnb.android:mavericks:2.5.1'
+    //mavericksNavigation
+    String mavericksNavigation = 'com.airbnb.android:mavericks-navigation:2.5.1'
+
+    //convex : https://github.com/ParadiseHell/convex
+    String convex = "org.paradisehell.convex:convex:1.0.0"
 
     /**
      * room
      */
     //roomRuntime
-    String roomRuntime = 'androidx.room:room-runtime:2.4.0-alpha05'
+    String roomRuntime = 'androidx.room:room-runtime:2.4.2'
     //roomCompiler
-    String roomCompiler = 'androidx.room:room-compiler:2.4.0-alpha05'
+    String roomCompiler = 'androidx.room:room-compiler:2.4.2'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
-    String roomKtx = 'androidx.room:room-ktx:2.4.0-alpha05'
+    String roomKtx = 'androidx.room:room-ktx:2.4.2'
 
     //tencentIM
-    String tencentIM = 'com.tencent.imsdk:imsdk:5.1.50'
+    String tencentIM = 'com.tencent.imsdk:imsdk:5.1.66'
 
     /*
      * 路由
@@ -201,9 +186,9 @@ interface Deps {
      * bug反馈
      */
     //bugly
-    String bugly = 'com.tencent.bugly:crashreport:3.4.4'
+    String bugly = 'com.tencent.bugly:crashreport:4.0.0'
     //buglyNDK
-    String buglyNDK = 'com.tencent.bugly:nativecrashreport:3.9.0'
+    String buglyNDK = 'com.tencent.bugly:nativecrashreport:3.9.2'
 
     /**
      * Web 浏览器
@@ -218,10 +203,10 @@ interface Deps {
     String ZXingLite = 'com.github.jenly1314:zxing-lite:2.1.1'
 
     //MLKitCore : https://github.com/jenly1314/MLKit，Camera核心 (*必须项)
-    String MLKitCore = 'com.github.jenly1314.MLKit:mlkit-camera-core:1.0.2'
+    String MLKitCore = 'com.github.jenly1314.MLKit:mlkit-camera-core:1.0.3'
 
     //MLKitBarcode : https://github.com/jenly1314/MLKit，条码识别 (可选项)
-    String MLKitBarcode = 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.0.2'
+    String MLKitBarcode = 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.0.3'
 
     //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
     String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
@@ -229,9 +214,9 @@ interface Deps {
     //exoPlayer: https://github.com/google/ExoPlayer
     String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.14.1'
     //exoCore: https://github.com/google/ExoPlayer
-    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.14.2'
+    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.16.1'
     //exoUI: https://github.com/google/ExoPlayer
-    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.14.2'
+    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.16.1'
 
     /*
      * 自定义view
@@ -254,10 +239,10 @@ interface Deps {
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
 
     //tencentTRTC
-    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.3.10769'
+    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11200'
 
     //eventBus : https://github.com/greenrobot/EventBus
-    String eventBus = 'org.greenrobot:eventbus:3.2.0'
+    String eventBus = 'org.greenrobot:eventbus:3.3.1'
 
     /*
      * 权限

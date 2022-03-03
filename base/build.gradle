@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
@@ -57,4 +58,29 @@ dependencies {
     api Deps.retrofit2ConverterGson
     api Deps.okHttpLogging
     api Deps.convex
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                groupId = 'com.zhangls'
+                artifactId = 'base'
+                version = '1.0'
+            }
+            // Creates a Maven publication called “debug”.
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+
+                groupId = 'com.zhangls'
+                artifactId = 'base'
+                version = '1.0'
+            }
+        }
+    }
 }

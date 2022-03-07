@@ -17,6 +17,10 @@ plugins {
     id 'version-plugin' apply true
 }
 
+versions {
+    inputFile = "./versions.gradle"
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

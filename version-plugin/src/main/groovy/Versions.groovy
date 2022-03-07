@@ -30,7 +30,7 @@ interface Deps {
     //appcompat
     String appcompat = 'androidx.appcompat:appcompat:1.3.1'
     //fragment
-    String fragment = 'androidx.fragment:fragment-ktx:1.3.5'
+    String fragment = 'androidx.fragment:fragment-ktx:1.4.1'
     //activity
     String activity = 'androidx.activity:activity:1.3.1'
     //andAnnotations
@@ -273,7 +273,4 @@ interface Deps {
 
     //timber
     String timber = 'com.jakewharton.timber:timber:4.7.1'
-
-    //logger
-    String logger = 'com.orhanobut:logger:2.2.0'
 }

@@ -12,12 +12,21 @@ class VersionPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        // 执行自动更新依赖到指定文件中
+        project.getExtensions().create("versions", VersionExtension)
+
+        project.afterEvaluate {
+            VersionExtension extension = project["versions"]
+            String inputFilePath = extension.inputFile
+
+            updateVersions(project, inputFilePath)
+        }
+    }
+
+    private static void updateVersions(Project project, String inputFilePath) {
         project.task("updateDependencies") {
             String rootGradlePath = "${project.rootDir}/build.gradle"
-            String versionPath = "${project.rootDir.parent}/AppBaseModule/version-plugin"
-            String inputFilePath = "$versionPath/versions.gradle"
-            String outputFilePath = "$versionPath/src/main/groovy/VersionPlugin.groovy"
+            String versionPath = "${project.rootDir.parent}/BaseUtils/version-plugin"
+            String outputFilePath = "$versionPath/src/main/groovy/Versions.groovy"
 
             // 将 inputFilePath 声明为该 Task 的 inputs
             inputs.file(inputFilePath)
@@ -133,8 +142,6 @@ class VersionPlugin implements Plugin<Project> {
                     writer.print(gradleTxt)
                     writer.flush()
                 })
-
-                logger.info("插件/依赖信息同步完成!")
             }
         }
     }

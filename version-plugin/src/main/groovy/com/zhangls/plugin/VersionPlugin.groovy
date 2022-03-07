@@ -17,16 +17,15 @@ class VersionPlugin implements Plugin<Project> {
         project.afterEvaluate {
             VersionExtension extension = project["versions"]
             String inputFilePath = extension.inputFile
+            String outputFilePath = extension.outputFile
 
-            updateVersions(project, inputFilePath)
+            updateVersions(project, inputFilePath, outputFilePath)
         }
     }
 
-    private static void updateVersions(Project project, String inputFilePath) {
+    private static void updateVersions(Project project, String inputFilePath, String outputFilePath) {
         project.task("updateDependencies") {
             String rootGradlePath = "${project.rootDir}/build.gradle"
-            String versionPath = "${project.rootDir.parent}/BaseUtils/version-plugin"
-            String outputFilePath = "$versionPath/src/main/groovy/Versions.groovy"
 
             // 将 inputFilePath 声明为该 Task 的 inputs
             inputs.file(inputFilePath)

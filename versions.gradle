@@ -224,13 +224,8 @@ dependencies {
     //coilSVG
     implementation 'io.coil-kt:coil-svg:1.4.0'
 
-    /*
-     * 权限
-     */
-    //permissionsDispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
-    implementation 'com.github.permissions-dispatcher:permissionsdispatcher:4.9.1'
-    //permissionsDispatcherProcessor
-    implementation 'com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1'
+    //XXPermissions : https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:13.5'
 
     /*
      * bug反馈

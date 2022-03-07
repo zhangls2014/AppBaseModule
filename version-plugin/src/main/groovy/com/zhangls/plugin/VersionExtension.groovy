@@ -4,4 +4,5 @@ package com.zhangls.plugin
  */
 class VersionExtension {
     public String inputFile = "./versions.gradle"
+    public String outputFile = "./Versions.groovy"
 }

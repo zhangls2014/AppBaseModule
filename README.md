@@ -9,7 +9,12 @@
 
    ```groovy
    plugins {
-       id 'version-plugin' apply true
+   	id 'version-plugin' apply true
+   }
+   
+   versions {
+     // 支持灵活配置版本管理文件
+   	inputFile = "./versions.gradle"
    }
    ```
 
@@ -27,13 +32,13 @@
 
 [![](https://jitpack.io/v/zhangls2014/BaseUtils.svg)](https://jitpack.io/#zhangls2014/BaseUtils)
 
-```
+```groovy
 allprojects {
 	repositories {
 		maven { url 'https://jitpack.io' }
 	}
 }
-   
+
 dependencies {
 	implementation 'com.github.zhangls2014:BaseUtils:Tag'
 }

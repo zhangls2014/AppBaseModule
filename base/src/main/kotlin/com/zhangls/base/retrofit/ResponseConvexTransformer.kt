@@ -5,6 +5,7 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.MalformedJsonException
+import com.zhangls.base.retrofit.common.ResponseException
 import okio.IOException
 import org.paradisehell.convex.transformer.ConvexTransformer
 import java.io.InputStream
@@ -24,17 +25,17 @@ class ResponseConvexTransformer : ConvexTransformer {
                 original.reader(),
                 object : TypeToken<BaseResponse<JsonElement>>() {}.type
             )
-            if (response.code == SUCCESS) {
-                return response.content.toString().byteInputStream()
+            return if (response.code == SUCCESS) {
+                response.content.toString().byteInputStream()
             } else {
-                throw IOException(response.message)
+                throw ResponseException(response.code, "code = ${response.code}, message = ${response.message}")
             }
         } catch (exception: JsonSyntaxException) {
             exception.printStackTrace()
-            throw IOException("返回数据解析异常[JsonSyntaxException]")
+            throw JsonSyntaxException("返回数据解析异常[JsonSyntaxException]")
         } catch (exception: MalformedJsonException) {
             exception.printStackTrace()
-            throw IOException("接口数据解析异常[MalformedJsonException]")
+            throw MalformedJsonException("接口数据解析异常[MalformedJsonException]")
         } catch (exception: Exception) {
             exception.printStackTrace()
             throw IOException(exception.message ?: "数据解析发生异常")

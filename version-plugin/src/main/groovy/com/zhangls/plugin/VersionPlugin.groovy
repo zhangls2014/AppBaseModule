@@ -19,6 +19,10 @@ class VersionPlugin implements Plugin<Project> {
             String inputFilePath = extension.inputFile
             String outputFilePath = extension.outputFile
 
+            if (inputFilePath == null || outputFilePath == null) {
+                return
+            }
+
             updateVersions(project, inputFilePath, outputFilePath)
         }
     }

@@ -18,8 +18,8 @@ plugins {
 }
 
 versions {
-    inputFile = "./versions.gradle"
-    outputFile = "${project.rootDir}/version-plugin/src/main/groovy/Versions.groovy"
+    inputFile = "versions.gradle"
+    outputFile = "$rootDir/version-plugin/src/main/groovy/Versions.groovy"
 }
 
 task clean(type: Delete) {

@@ -273,7 +273,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:4.7.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.2'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.3'
 
     //huaweiFaceShapePointModel
     String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'

@@ -57,7 +57,8 @@ interface Deps {
      */
     //lifecycleRuntime
     String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-
+    //viewModel
+    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
     /*
      * cameraX
@@ -174,13 +175,8 @@ interface Deps {
     //coilSVG
     String coilSVG = 'io.coil-kt:coil-svg:1.4.0'
 
-    /*
-     * 权限
-     */
-    //permissionsDispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
-    String permissionsDispatcher = 'com.github.permissions-dispatcher:permissionsdispatcher:4.9.1'
-    //permissionsDispatcherProcessor
-    String permissionsDispatcherProcessor = 'com.github.permissions-dispatcher:permissionsdispatcher-processor:4.9.1'
+    //XXPermissions : https://github.com/getActivity/XXPermissions
+    String XXPermissions = 'com.github.getActivity:XXPermissions:13.5'
 
     /*
      * bug反馈
@@ -210,6 +206,8 @@ interface Deps {
 
     //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
     String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    //pdfium
+    String pdfium = 'com.github.barteksc:pdfium-android:1.9.0'
 
     //exoPlayer: https://github.com/google/ExoPlayer
     String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.14.1'
@@ -273,4 +271,12 @@ interface Deps {
 
     //timber
     String timber = 'com.jakewharton.timber:timber:4.7.1'
+
+    //baseUtils : https://github.com/zhangls2014/BaseUtils
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.2'
+
+    //huaweiFaceShapePointModel
+    String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    //huaweiFace
+    String huaweiFace = 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
 }

@@ -107,7 +107,8 @@ dependencies {
      */
     //lifecycleRuntime
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-
+    //viewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
     /*
      * cameraX
@@ -255,6 +256,8 @@ dependencies {
 
     //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    //pdfium
+    implementation 'com.github.barteksc:pdfium-android:1.9.0'
 
     //exoPlayer: https://github.com/google/ExoPlayer
     implementation 'com.google.android.exoplayer:exoplayer:2.14.1'
@@ -318,6 +321,14 @@ dependencies {
 
     //timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //baseUtils : https://github.com/zhangls2014/BaseUtils
+    implementation 'com.github.zhangls2014:BaseUtils:0.1.2'
+
+    //huaweiFaceShapePointModel
+    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    //huaweiFace
+    implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
 
     /*</dep>*/
 }

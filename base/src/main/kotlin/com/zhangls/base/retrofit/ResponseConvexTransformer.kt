@@ -28,7 +28,7 @@ class ResponseConvexTransformer : ConvexTransformer {
             return if (response.code == SUCCESS) {
                 response.content.toString().byteInputStream()
             } else {
-                throw ResponseException(response.code, "code = ${response.code}, message = ${response.message}")
+                throw ResponseException(response.code, "code: ${response.code}, message: ${response.message}")
             }
         } catch (exception: JsonSyntaxException) {
             exception.printStackTrace()
@@ -36,6 +36,9 @@ class ResponseConvexTransformer : ConvexTransformer {
         } catch (exception: MalformedJsonException) {
             exception.printStackTrace()
             throw MalformedJsonException("接口数据解析异常[MalformedJsonException]")
+        } catch (exception: ResponseException) {
+            exception.printStackTrace()
+            throw exception
         } catch (exception: Exception) {
             exception.printStackTrace()
             throw IOException(exception.message ?: "数据解析发生异常")

@@ -127,8 +127,8 @@ dependencies {
     /**
      * navigation
      */
-    //navigationFragment
-    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    //navigationFragmentKtx
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     //navigationUI
     implementation "androidx.navigation:navigation-ui:2.4.1"
 

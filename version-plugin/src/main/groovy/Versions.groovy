@@ -77,8 +77,8 @@ interface Deps {
     /**
      * navigation
      */
-    //navigationFragment
-    String navigationFragment = 'androidx.navigation:navigation-fragment:2.4.1'
+    //navigationFragmentKtx
+    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     //navigationUI
     String navigationUI = "androidx.navigation:navigation-ui:2.4.1"
 

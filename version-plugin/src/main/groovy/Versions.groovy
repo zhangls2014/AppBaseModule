@@ -28,7 +28,7 @@ interface Deps {
      * androidx
      */
     //appcompat
-    String appcompat = 'androidx.appcompat:appcompat:1.3.1'
+    String appcompat = 'androidx.appcompat:appcompat:1.4.2'
     //fragment
     String fragment = 'androidx.fragment:fragment-ktx:1.4.1'
     //activity
@@ -44,9 +44,9 @@ interface Deps {
     //transition
     String transition = 'androidx.transition:transition:1.4.1'
     //constraintLayout
-    String constraintLayout = 'androidx.constraintlayout:constraintlayout:2.0.4'
+    String constraintLayout = 'androidx.constraintlayout:constraintlayout:2.1.0'
     //coreKtx
-    String coreKtx = 'androidx.core:core-ktx:1.6.0'
+    String coreKtx = 'androidx.core:core-ktx:1.7.0'
     //preference
     String preference = 'androidx.preference:preference:1.1.1'
     //viewpager2
@@ -64,13 +64,13 @@ interface Deps {
      * cameraX
      */
     //cameraXCore
-    String cameraXCore = "androidx.camera:camera-core:1.0.2"
+    String cameraXCore = "androidx.camera:camera-core:1.1.0"
     //cameraXCamera2
-    String cameraXCamera2 = "androidx.camera:camera-camera2:1.0.2"
+    String cameraXCamera2 = "androidx.camera:camera-camera2:1.1.0"
     //cameraXLifecycle
-    String cameraXLifecycle = "androidx.camera:camera-lifecycle:1.0.2"
+    String cameraXLifecycle = "androidx.camera:camera-lifecycle:1.1.0"
     //cameraXView
-    String cameraXView = 'androidx.camera:camera-view:1.0.0-alpha32'
+    String cameraXView = 'androidx.camera:camera-view:1.1.0'
     //cameraXExtensions
     String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha32"
 
@@ -78,7 +78,7 @@ interface Deps {
      * navigation
      */
     //navigationFragmentKtx
-    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.4.2'
     //navigationUI
     String navigationUI = "androidx.navigation:navigation-ui:2.4.1"
 
@@ -151,6 +151,8 @@ interface Deps {
     String roomCompiler = 'androidx.room:room-compiler:2.4.2'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
     String roomKtx = 'androidx.room:room-ktx:2.4.2'
+    //roomPaging
+    String roomPaging = 'androidx.room:room-paging:2.4.2'
 
     //tencentIM
     String tencentIM = 'com.tencent.imsdk:imsdk:5.1.66'
@@ -176,13 +178,13 @@ interface Deps {
     String coilSVG = 'io.coil-kt:coil-svg:1.4.0'
 
     //XXPermissions : https://github.com/getActivity/XXPermissions
-    String XXPermissions = 'com.github.getActivity:XXPermissions:13.5'
+    String XXPermissions = 'com.github.getActivity:XXPermissions:13.6'
 
     /*
      * bug反馈
      */
     //bugly
-    String bugly = 'com.tencent.bugly:crashreport:4.0.0'
+    String bugly = 'com.tencent.bugly:crashreport:4.0.4'
     //buglyNDK
     String buglyNDK = 'com.tencent.bugly:nativecrashreport:3.9.2'
 
@@ -190,7 +192,10 @@ interface Deps {
      * Web 浏览器
      */
     //tencentX5 : https://x5.tencent.com/docs/access.html
-    String tencentX5 = 'com.tencent.tbs:tbssdk:44153'
+    String tencentX5 = 'com.tencent.tbs:tbssdk:44181'
+
+    //jsBridge : https://github.com/zhangls2014/JSBridge
+    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
 
     //weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
     String weChatOpenSDK = 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
@@ -205,12 +210,12 @@ interface Deps {
     String MLKitBarcode = 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.0.3'
 
     //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
-    String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
     //pdfium
     String pdfium = 'com.github.barteksc:pdfium-android:1.9.0'
 
     //exoPlayer: https://github.com/google/ExoPlayer
-    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.14.1'
+    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.16.1'
     //exoCore: https://github.com/google/ExoPlayer
     String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.16.1'
     //exoUI: https://github.com/google/ExoPlayer
@@ -237,7 +242,7 @@ interface Deps {
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
 
     //tencentTRTC
-    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11200'
+    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:10.3.0.11144'
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = 'org.greenrobot:eventbus:3.3.1'
@@ -273,10 +278,16 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:4.7.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.3'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.4'
 
     //huaweiFaceShapePointModel
     String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
     //huaweiFace
     String huaweiFace = 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+
+    //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
+    String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
+
+    //amapLocation : 高德地图定位 SDK
+    String amapLocation = 'com.amap.api:location:6.1.0'
 }

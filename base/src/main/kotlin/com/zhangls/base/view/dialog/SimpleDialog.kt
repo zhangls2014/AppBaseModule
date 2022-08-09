@@ -23,7 +23,7 @@ import com.zhangls.base.extension.onClick
  *
  * @author zhangls
  */
-class SimpleDialog : AppCompatDialogFragment() {
+class SimpleDialog private constructor() : AppCompatDialogFragment() {
     private lateinit var simpleView: View
 
     // 按钮点击事件回调
@@ -40,10 +40,10 @@ class SimpleDialog : AppCompatDialogFragment() {
 
 
         fun newInstance(
-            title: String,
-            content: String,
-            positiveText: String,
-            negativeText: String?,
+            title: CharSequence,
+            content: CharSequence,
+            positiveText: CharSequence,
+            negativeText: CharSequence?,
             layoutId: Int? = null
         ): SimpleDialog {
             return SimpleDialog().apply {
@@ -82,15 +82,15 @@ class SimpleDialog : AppCompatDialogFragment() {
             val negativeButton = it.findViewById<TextView>(R.id.mbNegative)
 
             with(requireArguments()) {
-                it.findViewById<TextView>(R.id.tvTitle).text = getString(KEY_TITLE)
-                it.findViewById<TextView>(R.id.tvContent).text = getString(KEY_CONTENT)
-                positiveButton.text = getString(KEY_POSITIVE_TEXT)
-                val negativeText = getString(KEY_NEGATIVE_TEXT)
+                it.findViewById<TextView>(R.id.tvTitle).text = get(KEY_TITLE) as? CharSequence
+                it.findViewById<TextView>(R.id.tvContent).text = get(KEY_CONTENT) as? CharSequence
+                positiveButton.text = get(KEY_POSITIVE_TEXT) as? CharSequence
+                val negativeText = get(KEY_NEGATIVE_TEXT) as? CharSequence
                 if (negativeText.isNullOrEmpty()) {
                     negativeButton.isVisible = false
                 } else {
                     negativeButton.isVisible = true
-                    negativeButton.text = getString(KEY_NEGATIVE_TEXT)
+                    negativeButton.text = negativeText
                 }
             }
 

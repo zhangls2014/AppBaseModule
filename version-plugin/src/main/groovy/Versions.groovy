@@ -30,9 +30,9 @@ interface Deps {
     //appcompat
     String appcompat = 'androidx.appcompat:appcompat:1.4.2'
     //fragment
-    String fragment = 'androidx.fragment:fragment-ktx:1.4.1'
+    String fragment = 'androidx.fragment:fragment-ktx:1.5.1'
     //activity
-    String activity = 'androidx.activity:activity:1.3.1'
+    String activity = 'androidx.activity:activity:1.5.1'
     //andAnnotations
     String andAnnotations = 'androidx.annotation:annotation:1.3.0'
     //materialDesign
@@ -48,7 +48,7 @@ interface Deps {
     //coreKtx
     String coreKtx = 'androidx.core:core-ktx:1.7.0'
     //preference
-    String preference = 'androidx.preference:preference:1.1.1'
+    String preference = 'androidx.preference:preference:1.2.0'
     //viewpager2
     String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
 
@@ -56,9 +56,9 @@ interface Deps {
      * lifecycle
      */
     //lifecycleRuntime
-    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
     //viewModel
-    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
     /*
      * cameraX
@@ -72,15 +72,15 @@ interface Deps {
     //cameraXView
     String cameraXView = 'androidx.camera:camera-view:1.1.0'
     //cameraXExtensions
-    String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha32"
+    String cameraXExtensions = "androidx.camera:camera-extensions:1.1.0"
 
     /**
      * navigation
      */
     //navigationFragmentKtx
-    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.5.1'
     //navigationUI
-    String navigationUI = "androidx.navigation:navigation-ui:2.4.1"
+    String navigationUI = "androidx.navigation:navigation-ui:2.5.1"
 
     //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
     String flowEventBus = 'com.github.biubiuqiu0:flow-event-bus:0.0.2'
@@ -99,10 +99,10 @@ interface Deps {
     //flexBox : https://github.com/google/flexbox-layout
     String flexBox = 'com.google.android:flexbox:2.0.0'
     //gson : https://github.com/google/gson
-    String gson = 'com.google.code.gson:gson:2.8.9'
+    String gson = 'com.google.code.gson:gson:2.9.0'
 
     //coroutinesAndroid
-    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
     /*
      * 模块化框架
@@ -194,9 +194,6 @@ interface Deps {
     //tencentX5 : https://x5.tencent.com/docs/access.html
     String tencentX5 = 'com.tencent.tbs:tbssdk:44181'
 
-    //jsBridge : https://github.com/zhangls2014/JSBridge
-    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
-
     //weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
     String weChatOpenSDK = 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
 
@@ -242,7 +239,7 @@ interface Deps {
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
 
     //tencentTRTC
-    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:10.3.0.11144'
+    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11347'
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = 'org.greenrobot:eventbus:3.3.1'
@@ -265,6 +262,9 @@ interface Deps {
     //FitAndroid8 : Android 7/8 FileProvider适配 https://github.com/steven2947/FitAndroid8
     String FitAndroid8 = 'com.github.steven2947:FitAndroid8:0.5.0'
 
+    //utilCode
+    String utilCode = 'com.blankj:utilcodex:1.31.0'
+
     /*
     * 测试工具
     */
@@ -278,7 +278,10 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:4.7.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.4'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.6'
+
+    //jsBridge : https://github.com/zhangls2014/JsBridge
+    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
 
     //huaweiFaceShapePointModel
     String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
@@ -287,7 +290,4 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
-
-    //amapLocation : 高德地图定位 SDK
-    String amapLocation = 'com.amap.api:location:6.1.0'
 }

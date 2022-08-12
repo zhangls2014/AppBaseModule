@@ -2,7 +2,7 @@
  * 版本信息
  */
 interface Versions {
-    def buildTool = '32.0.0'
+    def buildTool = '33.0.0'
     def minSdk = 23
     def targetSdk = 31
     def compileSdk = 31
@@ -48,7 +48,7 @@ interface Deps {
     //coreKtx
     String coreKtx = 'androidx.core:core-ktx:1.7.0'
     //preference
-    String preference = 'androidx.preference:preference:1.2.0'
+    String preference = 'androidx.preference:preference:1.1.1'
     //viewpager2
     String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
 
@@ -72,7 +72,7 @@ interface Deps {
     //cameraXView
     String cameraXView = 'androidx.camera:camera-view:1.1.0'
     //cameraXExtensions
-    String cameraXExtensions = "androidx.camera:camera-extensions:1.1.0"
+    String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha32"
 
     /**
      * navigation
@@ -194,6 +194,9 @@ interface Deps {
     //tencentX5 : https://x5.tencent.com/docs/access.html
     String tencentX5 = 'com.tencent.tbs:tbssdk:44181'
 
+    //jsBridge : https://github.com/zhangls2014/JSBridge
+    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
+
     //weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
     String weChatOpenSDK = 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
 
@@ -238,8 +241,8 @@ interface Deps {
     //switchButton : https://github.com/kyleduo/SwitchButton
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
 
-    //tencentTRTC
-    String tencentTRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11347'
+    //tencentRTC
+    String tencentRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11347'
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = 'org.greenrobot:eventbus:3.3.1'
@@ -262,9 +265,6 @@ interface Deps {
     //FitAndroid8 : Android 7/8 FileProvider适配 https://github.com/steven2947/FitAndroid8
     String FitAndroid8 = 'com.github.steven2947:FitAndroid8:0.5.0'
 
-    //utilCode
-    String utilCode = 'com.blankj:utilcodex:1.31.0'
-
     /*
     * 测试工具
     */
@@ -278,10 +278,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:4.7.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.6'
-
-    //jsBridge : https://github.com/zhangls2014/JsBridge
-    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.8'
 
     //huaweiFaceShapePointModel
     String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
@@ -290,4 +287,7 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
+
+    //amapLocation : 高德地图定位 SDK
+    String amapLocation = 'com.amap.api:location:6.1.0'
 }

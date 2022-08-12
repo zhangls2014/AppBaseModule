@@ -10,19 +10,26 @@ import androidx.core.view.WindowInsetsControllerCompat
  * @author zhangls
  */
 
-fun Window.hideSystemBars(view: View) {
-    WindowCompat.setDecorFitsSystemWindows(this, false)
-
-    WindowInsetsControllerCompat(this, view).let {
-        it.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        it.hide(WindowInsetsCompat.Type.systemBars())
-    }
+/**
+ * WindowInsetsControllerCompat 不能正确的兼容各种系统版本，所以还是使用该方法实现全屏代码
+ */
+@Suppress("DEPRECATION")
+fun Window.hideSystemBars() {
+    decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_FULLSCREEN
 }
 
-fun Window.showSystemBars(view: View) {
-    WindowCompat.setDecorFitsSystemWindows(this, true)
-
-    WindowInsetsControllerCompat(this, view).show(WindowInsetsCompat.Type.systemBars())
+/**
+ * WindowInsetsControllerCompat 不能正确的兼容各种系统版本，所以还是使用该方法实现退出全屏代码
+ */
+@Suppress("DEPRECATION")
+fun Window.showSystemBars() {
+    decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_VISIBLE
 }
 
 fun Window.lightStatusBars(view: View, isLightStatusBars: Boolean) {

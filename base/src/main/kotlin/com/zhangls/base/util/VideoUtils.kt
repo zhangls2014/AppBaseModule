@@ -2,6 +2,9 @@ package com.zhangls.base.util
 
 import android.graphics.Bitmap
 import android.media.MediaMetadataRetriever
+import android.media.ThumbnailUtils
+import android.os.Build
+import android.provider.MediaStore
 
 
 /**
@@ -31,7 +34,12 @@ class VideoUtils(private val videoPath: String) {
      * 获取视频缩略图
      */
     fun getVideoThumbnail(width: Int = 640, height: Int = 350): Bitmap? {
-        return retriever?.getScaledFrameAtTime(10L, MediaMetadataRetriever.OPTION_PREVIOUS_SYNC, width, height)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+            retriever?.getScaledFrameAtTime(10L, MediaMetadataRetriever.OPTION_PREVIOUS_SYNC, width, height)
+        } else {
+          @Suppress("DEPRECATION")
+          ThumbnailUtils.createVideoThumbnail(videoPath, MediaStore.Images.Thumbnails.MINI_KIND)
+        }
     }
 
 }

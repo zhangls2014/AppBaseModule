@@ -48,7 +48,7 @@ interface Deps {
     //coreKtx
     String coreKtx = 'androidx.core:core-ktx:1.7.0'
     //preference
-    String preference = 'androidx.preference:preference:1.1.1'
+    String preference = 'androidx.preference:preference:1.2.0'
     //viewpager2
     String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
 
@@ -72,7 +72,7 @@ interface Deps {
     //cameraXView
     String cameraXView = 'androidx.camera:camera-view:1.1.0'
     //cameraXExtensions
-    String cameraXExtensions = "androidx.camera:camera-extensions:1.0.0-alpha32"
+    String cameraXExtensions = "androidx.camera:camera-extensions:1.1.0"
 
     /**
      * navigation
@@ -194,9 +194,6 @@ interface Deps {
     //tencentX5 : https://x5.tencent.com/docs/access.html
     String tencentX5 = 'com.tencent.tbs:tbssdk:44181'
 
-    //jsBridge : https://github.com/zhangls2014/JSBridge
-    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
-
     //weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
     String weChatOpenSDK = 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.8.0'
 
@@ -280,6 +277,9 @@ interface Deps {
     //baseUtils : https://github.com/zhangls2014/BaseUtils
     String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.8'
 
+    //jsBridge : https://github.com/zhangls2014/JsBridge
+    String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
+
     //huaweiFaceShapePointModel
     String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
     //huaweiFace
@@ -287,7 +287,4 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
-
-    //amapLocation : 高德地图定位 SDK
-    String amapLocation = 'com.amap.api:location:6.1.0'
 }

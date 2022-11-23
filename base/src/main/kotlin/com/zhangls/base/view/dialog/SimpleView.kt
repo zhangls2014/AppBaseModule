@@ -74,23 +74,21 @@ class SimpleView : ConstraintLayout {
         }
     }
 
-    val positiveButton by lazy {
+    val negativeButton by lazy {
         MaterialButton(context).apply {
-            id = R.id.mbPositive
+            id = R.id.mbNegative
             textSize = 14F
             cornerRadius = 4.dp
-            setTextColor(context.colorFromAttr(R.attr.colorOnPrimary))
+            setTextColor(context.colorInt(R.color.base_white))
+            setBackgroundColor(context.colorInt(R.color.base_dark_blue))
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
                 leftToLeft = parentId
-                rightToLeft = R.id.mbNegative
-                bottomToBottom = parentId
-                topToBottom = R.id.tvContent
+                rightToLeft = R.id.mbPositive
+                topToTop = R.id.mbPositive
+                bottomToBottom = R.id.mbPositive
 
-                topMargin = 24.dp
-                bottomMargin = 16.dp
                 leftMargin = 24.dp
-                rightMargin = 24.dp
 
                 verticalBias = 1F
                 horizontalChainStyle = LayoutParams.CHAIN_PACKED
@@ -98,20 +96,23 @@ class SimpleView : ConstraintLayout {
         }
     }
 
-    val negativeButton by lazy {
+    val positiveButton by lazy {
         MaterialButton(context).apply {
-            id = R.id.mbNegative
+            id = R.id.mbPositive
             textSize = 14F
             cornerRadius = 4.dp
-            setTextColor(context.colorFromAttr(R.attr.colorOnPrimary))
-            setBackgroundColor(context.colorInt(R.color.base_dark_blue))
+            setTextColor(context.colorInt(R.color.base_white))
+            setBackgroundColor(context.colorInt(R.color.base_red))
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
-                leftToRight = R.id.mbPositive
-                topToTop = R.id.mbPositive
-                bottomToBottom = R.id.mbPositive
+                leftToRight = R.id.mbNegative
+                topToBottom = R.id.tvContent
+                bottomToBottom = parentId
                 rightToRight = parentId
 
+                topMargin = 24.dp
+                bottomMargin = 16.dp
+                leftMargin = 24.dp
                 rightMargin = 24.dp
             }
         }

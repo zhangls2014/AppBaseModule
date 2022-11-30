@@ -23,19 +23,19 @@ class ResponseHandler {
             exception.printStackTrace()
             ResponseResult.Error(
                 code = exception.code(),
-                message = "请求异常[${exception.javaClass.simpleName} = ${exception.cause}]"
+                message = "请求异常[${exception.javaClass.simpleName} = ${exception.message}]"
             )
         } catch (exception: JsonSyntaxException) {
             exception.printStackTrace()
             ResponseResult.Error(
                 code = UNKNOWN_ERROR,
-                message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"
+                message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.message}]"
             )
         } catch (exception: MalformedJsonException) {
             exception.printStackTrace()
             ResponseResult.Error(
                 code = UNKNOWN_ERROR,
-                message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.cause}]"
+                message = "返回数据解析异常[${exception.javaClass.simpleName} = ${exception.message}]"
             )
         } catch (exception: ResponseException) {
             exception.printStackTrace()

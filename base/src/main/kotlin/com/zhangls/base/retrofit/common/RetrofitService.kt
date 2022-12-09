@@ -14,9 +14,8 @@ import java.util.concurrent.TimeUnit
  */
 class RetrofitService {
     companion object {
-        fun <T> create(
+        inline fun <reified T : Any> create(
             baseUrl: String,
-            service: Class<T>,
             vararg interceptor: Interceptor,
             timeout: Long = 30,
             converter: ConvexConverterFactory? = null
@@ -35,14 +34,14 @@ class RetrofitService {
                         .client(client)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
-                        .create(service)
+                        .create(T::class.java)
                 } else {
                     it.baseUrl(baseUrl)
                         .client(client)
                         .addConverterFactory(converter)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
-                        .create(service)
+                        .create(T::class.java)
                 }
             }
         }

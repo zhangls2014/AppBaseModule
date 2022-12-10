@@ -3,7 +3,7 @@
  */
 interface Versions {
     def buildTool = '33.0.0'
-    def minSdk = 23
+    def minSdk = 24
     def targetSdk = 31
     def compileSdk = 31
 }
@@ -36,7 +36,7 @@ interface Deps {
     //andAnnotations
     String andAnnotations = 'androidx.annotation:annotation:1.3.0'
     //materialDesign
-    String materialDesign = 'com.google.android.material:material:1.5.0'
+    String materialDesign = 'com.google.android.material:material:1.6.1'
     //cardView
     String cardView = 'androidx.cardview:cardview:1.0.0'
     //recyclerView
@@ -44,7 +44,7 @@ interface Deps {
     //transition
     String transition = 'androidx.transition:transition:1.4.1'
     //constraintLayout
-    String constraintLayout = 'androidx.constraintlayout:constraintlayout:2.1.0'
+    String constraintLayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
     //coreKtx
     String coreKtx = 'androidx.core:core-ktx:1.7.0'
     //preference
@@ -94,7 +94,7 @@ interface Deps {
      * google
      */
     //pagingRuntime
-    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.1.0'
+    String pagingRuntime = 'androidx.paging:paging-runtime-ktx:3.1.1'
 
     //flexBox : https://github.com/google/flexbox-layout
     String flexBox = 'com.google.android:flexbox:2.0.0'
@@ -146,16 +146,21 @@ interface Deps {
      * room
      */
     //roomRuntime
-    String roomRuntime = 'androidx.room:room-runtime:2.4.2'
+    String roomRuntime = 'androidx.room:room-runtime:2.4.3'
     //roomCompiler
-    String roomCompiler = 'androidx.room:room-compiler:2.4.2'
+    String roomCompiler = 'androidx.room:room-compiler:2.4.3'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
-    String roomKtx = 'androidx.room:room-ktx:2.4.2'
+    String roomKtx = 'androidx.room:room-ktx:2.4.3'
+    //roomCoroutines
+    String roomCoroutines = 'androidx.room:room-coroutines:2.1.0-alpha04'
     //roomPaging
-    String roomPaging = 'androidx.room:room-paging:2.4.2'
+    String roomPaging = 'androidx.room:room-paging:2.4.3'
 
     //tencentIM
     String tencentIM = 'com.tencent.imsdk:imsdk:5.1.66'
+
+    //utilcodex
+    String utilcodex = 'com.blankj:utilcodex:1.31.1'
 
     /*
      * 路由
@@ -177,14 +182,22 @@ interface Deps {
     //coilSVG
     String coilSVG = 'io.coil-kt:coil-svg:1.4.0'
 
+    //glide
+    String glide = 'com.github.bumptech.glide:glide:4.14.2'
+    //glideCompiler
+    String glideCompiler = 'com.github.bumptech.glide:compiler:4.14.2'
+
     //XXPermissions : https://github.com/getActivity/XXPermissions
-    String XXPermissions = 'com.github.getActivity:XXPermissions:13.6'
+    String XXPermissions = 'com.github.getActivity:XXPermissions:16.0'
+
+    //compressor : https://github.com/zetbaitsu/Compressor
+    String compressor = 'id.zelory:compressor:3.0.1'
 
     /*
      * bug反馈
      */
     //bugly
-    String bugly = 'com.tencent.bugly:crashreport:4.0.4'
+    String bugly = 'com.tencent.bugly:crashreport:4.1.9'
     //buglyNDK
     String buglyNDK = 'com.tencent.bugly:nativecrashreport:3.9.2'
 
@@ -206,17 +219,17 @@ interface Deps {
     //MLKitBarcode : https://github.com/jenly1314/MLKit，条码识别 (可选项)
     String MLKitBarcode = 'com.github.jenly1314.MLKit:mlkit-barcode-scanning:1.0.3'
 
-    //pdfViewer  : https://github.com/barteksc/AndroidPdfViewer
-    String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
+    //pdfViewer
+    String pdfViewer = 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
     //pdfium
     String pdfium = 'com.github.barteksc:pdfium-android:1.9.0'
 
     //exoPlayer: https://github.com/google/ExoPlayer
-    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.16.1'
+    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.18.1'
     //exoCore: https://github.com/google/ExoPlayer
-    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.16.1'
+    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.18.1'
     //exoUI: https://github.com/google/ExoPlayer
-    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.16.1'
+    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.18.1'
 
     /*
      * 自定义view
@@ -231,15 +244,17 @@ interface Deps {
     String swipeBack = 'n.simonlee.widget:swipeback:1.0.15'
     //banner : https://github.com/youth5201314/banner
     String banner = 'io.github.youth5201314:banner:2.2.2'
-    //photoView : https://github.com/chrisbanes/PhotoViewƒ
+    //photoView : https://github.com/chrisbanes/PhotoView
     String photoView = 'com.github.chrisbanes:PhotoView:2.3.0'
     //androidPickerView : 时间,地址选择器 https://github.com/Bigkoo/Android-PickerView
     String androidPickerView = 'com.contrarywind:Android-PickerView:4.1.9'
     //switchButton : https://github.com/kyleduo/SwitchButton
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
+    //easyPhotos : https://github.com/joker-fu/EasyPhotos
+    String easyPhotos = 'io.github.joker-fu:EasyPhotos:andX-2.5.7'
 
     //tencentRTC
-    String tencentRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:9.5.11347'
+    String tencentRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:10.8.0.13052'
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = 'org.greenrobot:eventbus:3.3.1'
@@ -266,16 +281,16 @@ interface Deps {
     * 测试工具
     */
     //leakCanaryAndroid : https://github.com/square/leakcanary
-    String leakCanaryAndroid = 'com.squareup.leakcanary:leakcanary-android:2.7'
+    String leakCanaryAndroid = 'com.squareup.leakcanary:leakcanary-android:2.8'
 
     //blockCanaryAndroid :卡顿监控和提示 https://github.com/markzhai/AndroidPerformanceMonitor
     String blockCanaryAndroid = 'com.github.markzhai:blockcanary-android:1.5.0'
 
     //timber
-    String timber = 'com.jakewharton.timber:timber:4.7.1'
+    String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.1.8'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.2.3'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
@@ -287,4 +302,22 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
+
+    //amapLocation : 高德地图定位 SDK
+    String amapLocation = 'com.amap.api:location:6.1.0'
+
+    //aliOSS
+    String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'
+
+    //logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
+    String logan = 'com.dianping.android.sdk:logan:1.2.2'
+
+    //glog : https://github.com/huolalatech/hll-wp-glog/blob/master/README-zh.md
+    String glog = 'cn.huolala.glog.android:glog-android-static:1.0.0'
+
+    //baiduLocation
+    String baiduLocation = 'com.baidu.lbsyun:BaiduMapSDK_Location:9.3.7'
+
+    //ffmpegCommand : https://github.com/AnJoiner/FFmpegCommand
+    String ffmpegCommand = 'com.github.AnJoiner:FFmpegCommand:1.2.2-lite'
 }

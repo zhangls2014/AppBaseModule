@@ -74,7 +74,7 @@ dependencies {
     api Deps.retrofit2
     api Deps.retrofit2ConverterGson
     api Deps.okHttpLogging
-    api Deps.convex
+    api Deps.utilcodex
 }
 
 afterEvaluate {

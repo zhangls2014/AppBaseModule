@@ -10,4 +10,5 @@
     <item name="viewDivider" type="id" />
     <item name="mbPositive" type="id" />
     <item name="toolbar" type="id" />
+    <item name="ivCheck" type="id" />
 </resources>

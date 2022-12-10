@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.lifecycleScope
 import com.zhangls.base.R
 import com.zhangls.base.extension.onClick
 
@@ -134,7 +135,9 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
     }
 
     override fun show(manager: FragmentManager, tag: String?) {
-        super.show(manager, tag)
-        dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
+        lifecycleScope.launchWhenResumed {
+            super.show(manager, tag)
+            dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
+        }
     }
 }

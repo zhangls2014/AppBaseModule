@@ -9,4 +9,5 @@
     <item name="tvContent" type="id" />
     <item name="viewDivider" type="id" />
     <item name="mbPositive" type="id" />
+    <item name="toolbar" type="id" />
 </resources>

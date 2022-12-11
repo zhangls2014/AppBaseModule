@@ -12,26 +12,24 @@ import java.util.concurrent.TimeUnit
  * @author zhangls
  */
 class RetrofitService {
-    companion object {
-        inline fun <reified T : Any> create(
-            baseUrl: String,
-            vararg interceptor: Interceptor,
-            timeout: Long = 30
-        ): T {
-            val clientBuilder = OkHttpClient.Builder()
-                .connectTimeout(timeout, TimeUnit.SECONDS)
-                .readTimeout(timeout, TimeUnit.SECONDS)
-            interceptor.forEach {
-                clientBuilder.addInterceptor(it)
-            }
-            val client = clientBuilder.build()
-
-            return Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(T::class.java)
+    inline fun <reified T : Any> create(
+        baseUrl: String,
+        vararg interceptor: Interceptor,
+        timeout: Long = 30
+    ): T {
+        val clientBuilder = OkHttpClient.Builder()
+            .connectTimeout(timeout, TimeUnit.SECONDS)
+            .readTimeout(timeout, TimeUnit.SECONDS)
+        interceptor.forEach {
+            clientBuilder.addInterceptor(it)
         }
+        val client = clientBuilder.build()
+
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(T::class.java)
     }
 }

@@ -3,7 +3,7 @@
  */
 interface Versions {
     def buildTool = '33.0.0'
-    def minSdk = 24
+    def minSdk = 23
     def targetSdk = 31
     def compileSdk = 31
 }
@@ -290,7 +290,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.2.3'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.2.5'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
@@ -302,9 +302,6 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
-
-    //amapLocation : 高德地图定位 SDK
-    String amapLocation = 'com.amap.api:location:6.1.0'
 
     //aliOSS
     String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'

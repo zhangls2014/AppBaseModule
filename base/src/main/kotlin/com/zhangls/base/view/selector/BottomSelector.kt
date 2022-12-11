@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -93,11 +91,5 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
             selectItems = items
         }
         return this
-    }
-
-    override fun show(manager: FragmentManager, tag: String?) {
-        lifecycleScope.launchWhenResumed {
-            super.show(manager, tag)
-        }
     }
 }

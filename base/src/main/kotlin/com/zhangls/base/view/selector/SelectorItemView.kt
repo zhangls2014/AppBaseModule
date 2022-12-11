@@ -33,6 +33,7 @@ class SelectorItemView : ConstraintLayout {
     }
 
     val check = ShapeableImageView(context).apply {
+        id = R.id.ivCheck
         imageTintList = context.colorStateListFromAttr(R.attr.colorPrimary)
         setImageResource(R.drawable.base_ic_recycler_item_select_check)
 

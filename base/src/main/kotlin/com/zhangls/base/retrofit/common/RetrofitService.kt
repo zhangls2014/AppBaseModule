@@ -12,24 +12,29 @@ import java.util.concurrent.TimeUnit
  * @author zhangls
  */
 class RetrofitService {
-    inline fun <reified T : Any> create(
-        baseUrl: String,
-        vararg interceptor: Interceptor,
-        timeout: Long = 30
-    ): T {
-        val clientBuilder = OkHttpClient.Builder()
-            .connectTimeout(timeout, TimeUnit.SECONDS)
-            .readTimeout(timeout, TimeUnit.SECONDS)
-        interceptor.forEach {
-            clientBuilder.addInterceptor(it)
-        }
-        val client = clientBuilder.build()
+    companion object {
+        /**
+         * @param timeout 本来是有默认参数，值为 30，但是因为与 vararg 搭配，导致必须使用具名参数形式，所以去掉了默认值
+         */
+        inline fun <reified T : Any> create(
+            baseUrl: String,
+            timeout: Long,
+            vararg interceptor: Interceptor
+        ): T {
+            val clientBuilder = OkHttpClient.Builder()
+                .connectTimeout(timeout, TimeUnit.SECONDS)
+                .readTimeout(timeout, TimeUnit.SECONDS)
+            interceptor.forEach {
+                clientBuilder.addInterceptor(it)
+            }
+            val client = clientBuilder.build()
 
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(T::class.java)
+            return Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(T::class.java)
+        }
     }
 }

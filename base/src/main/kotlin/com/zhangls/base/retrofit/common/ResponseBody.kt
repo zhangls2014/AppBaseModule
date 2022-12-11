@@ -1,4 +1,4 @@
-package com.zhangls.base.retrofit
+package com.zhangls.base.retrofit.common
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

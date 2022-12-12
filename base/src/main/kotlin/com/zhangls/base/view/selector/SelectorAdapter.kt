@@ -1,15 +1,11 @@
 package com.zhangls.base.view.selector
 
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textview.MaterialTextView
-import com.zhangls.base.R
 import com.zhangls.base.extension.onClick
 
 
@@ -46,9 +42,9 @@ internal class SelectorAdapter(
         }
     }
 
-    class SelectViewHolder(val item: View) : RecyclerView.ViewHolder(item) {
-        val text: MaterialTextView = itemView.findViewById(R.id.tvText)
-        val check: AppCompatImageView = itemView.findViewById(R.id.ivCheck)
+    class SelectViewHolder(val item: SelectorItemView) : RecyclerView.ViewHolder(item) {
+        val text = item.text
+        val check = item.check
     }
 
 }

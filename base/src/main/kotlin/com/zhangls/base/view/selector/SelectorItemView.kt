@@ -55,6 +55,8 @@ class SelectorItemView : ConstraintLayout {
 
         setPadding(16.dp)
         setBackgroundResource(context.resourceIdFromAttr(android.R.attr.selectableItemBackground))
+
+        layoutParams = recyclerViewParams(matchParent, wrapContent)
     }
 
 }

@@ -75,6 +75,9 @@ dependencies {
     api Deps.retrofit2ConverterGson
     api Deps.okHttpLogging
     api Deps.utilcodex
+    // 日志框架
+    api Deps.glog
+    api Deps.timber
 }
 
 afterEvaluate {

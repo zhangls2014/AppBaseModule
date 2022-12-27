@@ -4,6 +4,8 @@ package com.zhangls.base.extension
 
 import android.app.usage.StorageStatsManager
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Environment
 import android.os.StatFs
 import android.os.storage.StorageManager
@@ -348,5 +350,23 @@ fun Long.getFileSizeString(@IntRange(from = 0, to = 3) length: Int): String {
                 .toFloat()
             "${toFloat}GB"
         }
+    }
+}
+
+/**
+ * 将 bitmap 保存到 File 中
+ */
+fun File.saveBitmap(bitmap: Bitmap) {
+    BufferedOutputStream(FileOutputStream(this)).use {
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+    }
+}
+
+/**
+ * 从照片文件中读取 bitmap
+ */
+fun File.readImage(): Bitmap {
+    return BufferedInputStream(FileInputStream(this)).use {
+        BitmapFactory.decodeStream(it)
     }
 }

@@ -51,6 +51,8 @@ interface Deps {
     String preference = 'androidx.preference:preference:1.2.0'
     //viewpager2
     String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
+    //datastorePreferences
+    String datastorePreferences = "androidx.datastore:datastore-preferences:1.0.0"
 
     /*
      * lifecycle
@@ -290,7 +292,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.2.8'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.3.3'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
@@ -302,6 +304,9 @@ interface Deps {
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
+
+    //amapLocation : 高德地图定位 SDK
+    String amapLocation = 'com.amap.api:location:6.2.0'
 
     //aliOSS
     String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'

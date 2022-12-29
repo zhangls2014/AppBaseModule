@@ -68,6 +68,7 @@ dependencies {
     api Deps.materialDesign
     api Deps.constraintLayout
     api Deps.navigationFragmentKtx
+    api Deps.datastorePreferences
 
     // 网络请求框架：Retrofit + Gson
     api Deps.gson

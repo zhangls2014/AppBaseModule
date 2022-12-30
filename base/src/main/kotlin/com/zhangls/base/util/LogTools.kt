@@ -2,14 +2,14 @@ package com.zhangls.base.util
 
 import android.content.Context
 import android.os.Environment
-import android.util.Log
 import com.blankj.utilcode.util.FileUtils
-import com.blankj.utilcode.util.GsonUtils
 import com.zhangls.base.BuildConfig
+import com.zhangls.base.LogProtos
 import com.zhangls.base.util.LogTools.init
 import glog.android.Glog
 import timber.log.Timber
 import java.io.File
+import java.util.concurrent.atomic.AtomicLong
 
 
 /**
@@ -21,6 +21,9 @@ import java.io.File
  */
 object LogTools {
     private lateinit var glog: Glog
+
+    // 序号
+    private val seq = AtomicLong()
 
     init {
         val level = if (BuildConfig.DEBUG) {
@@ -50,37 +53,37 @@ object LogTools {
 
     fun i(tag: String, log: String) {
         Timber.i("$tag, $log")
-        write(LogProtos(Log.INFO, tag, log))
+        write(serializeLog(LogProtos.Log.Level.INFO, tag, log))
     }
 
     fun d(tag: String, log: String) {
         Timber.d("$tag, $log")
-        write(LogProtos(Log.DEBUG, tag, log))
+        write(serializeLog(LogProtos.Log.Level.DEBUG, tag, log))
     }
 
     fun e(tag: String, log: String) {
         Timber.e("$tag, $log")
-        write(LogProtos(Log.ERROR, tag, log))
+        write(serializeLog(LogProtos.Log.Level.ERROR, tag, log))
     }
 
     fun v(tag: String, log: String) {
         Timber.v("$tag, $log")
-        write(LogProtos(Log.VERBOSE, tag, log))
+        write(serializeLog(LogProtos.Log.Level.VERBOSE, tag, log))
     }
 
     fun w(tag: String, log: String) {
         Timber.w("$tag, $log")
 
-        write(LogProtos(Log.WARN, tag, log))
+        write(serializeLog(LogProtos.Log.Level.WARN, tag, log))
     }
 
-    fun write(level: Int, tag: String, log: String) {
-        write(LogProtos(level, tag, log))
+    fun write(level: LogProtos.Log.Level, tag: String, log: String) {
+        write(serializeLog(level, tag, log))
     }
 
-    private fun write(logProtos: LogProtos) {
+    private fun write(logProtos: ByteArray) {
         if (::glog.isInitialized) {
-            glog.write(GsonUtils.toJson(logProtos).toByteArray())
+            glog.write(logProtos)
         }
     }
 
@@ -124,21 +127,40 @@ object LogTools {
                     logCount += 1
 
                     val content = inBuf.copyOfRange(0, count)
-                    it.write(String(content).toByteArray())
+                    it.write(deserializeLog(content).toByteArray())
                 }
                 it.write("]".toByteArray())
             }
         }
     }
 
+    private fun serializeLog(level: LogProtos.Log.Level, tag: String, message: String): ByteArray {
+        return LogProtos.Log.newBuilder()
+            .setLogLevel(level)
+            .setSequence(seq.getAndIncrement())
+            .setTimestamp(System.currentTimeMillis().toString())
+            .setPid(android.os.Process.myPid())
+            .setTid(Thread.currentThread().id.toString())
+            .setTag(tag)
+            .setMsg(message)
+            .build()
+            .toByteArray()
+    }
 
-    private data class LogProtos(
-        val logLevel: Int,
-        val tag: String,
-        val message: String,
-        val timestamp: Long = System.currentTimeMillis(),
-        val tid: Long = Thread.currentThread().id,
-        val pid: Int = android.os.Process.myPid()
-    )
+    private fun deserializeLog(bytes: ByteArray): String {
+        return LogProtos.Log.parseFrom(bytes).string()
+    }
+
+    private fun LogProtos.Log.string(): String {
+        return "Log{" +
+                "sequence=" + sequence +
+                ", timestamp='" + timestamp + '\'' +
+                ", logLevel=" + logLevel +
+                ", pid=" + pid +
+                ", tid='" + tid + '\'' +
+                ", tag='" + tag + '\'' +
+                ", msg='" + msg + '\'' +
+                '}'
+    }
 
 }

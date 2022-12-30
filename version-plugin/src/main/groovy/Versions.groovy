@@ -52,7 +52,9 @@ interface Deps {
     //viewpager2
     String viewpager2 = 'androidx.viewpager2:viewpager2:1.0.0'
     //datastorePreferences
-    String datastorePreferences = "androidx.datastore:datastore-preferences:1.0.0"
+    String datastorePreferences = 'androidx.datastore:datastore-preferences:1.0.0'
+    //datastore
+    String datastore = 'androidx.datastore:datastore:1.0.0'
 
     /*
      * lifecycle
@@ -312,7 +314,7 @@ interface Deps {
     String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'
 
     //logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
-    String logan = 'com.dianping.android.sdk:logan:1.2.2'
+    String logan = 'com.dianping.android.sdk:logan:1.2.4'
 
     //glog : https://github.com/huolalatech/hll-wp-glog/blob/master/README-zh.md
     String glog = 'cn.huolala.glog.android:glog-android-static:1.0.0'
@@ -322,4 +324,7 @@ interface Deps {
 
     //ffmpegCommand : https://github.com/AnJoiner/FFmpegCommand
     String ffmpegCommand = 'com.github.AnJoiner:FFmpegCommand:1.2.2-lite'
+
+    //protobuf
+    String protobuf = 'com.google.protobuf:protobuf-lite:3.0.1'
 }

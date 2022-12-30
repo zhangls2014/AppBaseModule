@@ -21,3 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class com.zhangls.base.** { *; }
+
+-keepclassmembers class * extends androidx.datastore.preferences.protobuf.GeneratedMessageLite {
+    <fields>;
+}

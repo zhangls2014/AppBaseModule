@@ -1,15 +1,23 @@
-package com.zhangls.base.data
+package com.zhangls.base.util
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
+import com.zhangls.base.util.DataStoreUtils.dataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 
 /**
+ * DataStore 工具类
+ *
+ * 使用前需要通过 preferencesDataStore(name = "[Name]") 将 dataStore 实例传给 [dataStore]
+ *
+ * [DataStore] 的所有类型的数据 key 必须是唯一的
+ *
  * @author zhangls
  */
 object DataStoreUtils {
+    // 需要应用通过 val Context.dataStore by preferencesDataStore(name = "[Name]") 方式创建一个 DataStore 实例，并赋值给本工具类
     lateinit var dataStore: DataStore<Preferences>
 
 
@@ -25,7 +33,7 @@ object DataStoreUtils {
         it[stringPreferencesKey(key)] = value
     }
 
-    suspend fun putStringSetData(key: String, value: Set<String>) = dataStore.edit {
+    suspend fun put(key: String, value: Set<String>) = dataStore.edit {
         it[stringSetPreferencesKey(key)] = value
     }
 
@@ -67,5 +75,23 @@ object DataStoreUtils {
 
     suspend fun getDouble(key: String, default: Double = 0.0): Double {
         return dataStore.data.map { it[doublePreferencesKey(key)] ?: default }.first()
+    }
+
+    suspend fun remove(key: String) {
+        dataStore.edit {
+            when {
+                it.contains(intPreferencesKey(key)) -> it.remove(intPreferencesKey(key))
+                it.contains(longPreferencesKey(key)) -> it.remove(longPreferencesKey(key))
+                it.contains(floatPreferencesKey(key)) -> it.remove(floatPreferencesKey(key))
+                it.contains(doublePreferencesKey(key)) -> it.remove(doublePreferencesKey(key))
+                it.contains(booleanPreferencesKey(key)) -> it.remove(booleanPreferencesKey(key))
+                it.contains(stringPreferencesKey(key)) -> it.remove(stringPreferencesKey(key))
+                it.contains(stringSetPreferencesKey(key)) -> it.remove(stringSetPreferencesKey(key))
+            }
+        }
+    }
+
+    suspend fun clear() {
+        dataStore.edit { it.clear() }
     }
 }

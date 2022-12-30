@@ -45,6 +45,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.2'
     //https://github.com/kezong/fat-aar-android
     implementation 'com.github.kezong:fat-aar:1.3.8'
+    implementation 'com.google.protobuf:protobuf-gradle-plugin:0.9.1'
     /*</plugin>*/
 
 
@@ -96,7 +97,9 @@ dependencies {
     //viewpager2
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     //datastorePreferences
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    //datastore
+    implementation 'androidx.datastore:datastore:1.0.0'
 
     /*
      * lifecycle
@@ -356,7 +359,7 @@ dependencies {
     implementation 'com.aliyun.dpa:oss-android-sdk:2.9.11'
 
     //logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
-    implementation 'com.dianping.android.sdk:logan:1.2.2'
+    implementation 'com.dianping.android.sdk:logan:1.2.4'
 
     //glog : https://github.com/huolalatech/hll-wp-glog/blob/master/README-zh.md
     implementation 'cn.huolala.glog.android:glog-android-static:1.0.0'
@@ -366,6 +369,9 @@ dependencies {
 
     //ffmpegCommand : https://github.com/AnJoiner/FFmpegCommand
     implementation 'com.github.AnJoiner:FFmpegCommand:1.2.2-lite'
+
+    //protobuf
+    implementation 'com.google.protobuf:protobuf-lite:3.0.1'
 
     /*</dep>*/
 }

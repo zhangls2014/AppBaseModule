@@ -85,7 +85,7 @@ dependencies {
     // 日志框架
     api Deps.glog
     api Deps.timber
-    implementation Deps.protobuf
+    api Deps.protobuf
 }
 
 afterEvaluate {

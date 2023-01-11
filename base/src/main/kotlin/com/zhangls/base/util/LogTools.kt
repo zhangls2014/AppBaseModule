@@ -3,12 +3,15 @@ package com.zhangls.base.util
 import android.content.Context
 import android.os.Environment
 import com.blankj.utilcode.util.FileUtils
+import com.google.gson.GsonBuilder
 import com.zhangls.base.BuildConfig
 import com.zhangls.base.LogProtos
 import com.zhangls.base.util.LogTools.init
 import glog.android.Glog
 import timber.log.Timber
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.concurrent.atomic.AtomicLong
 
 
@@ -152,15 +155,30 @@ object LogTools {
     }
 
     private fun LogProtos.Log.string(): String {
-        return "Log{" +
-                "sequence=" + sequence +
-                ", timestamp='" + timestamp + '\'' +
-                ", logLevel=" + logLevel +
-                ", pid=" + pid +
-                ", tid='" + tid + '\'' +
-                ", tag='" + tag + '\'' +
-                ", msg='" + msg + '\'' +
-                '}'
+        return LogFormatter(
+            sequence,
+            SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date(timestamp.toLong())),
+            logLevel.name,
+            pid,
+            tid,
+            tag,
+            msg
+        ).let {
+            GsonBuilder().disableHtmlEscaping()
+                .setPrettyPrinting()
+                .create()
+                .toJson(it)
+        }
     }
+
+    private data class LogFormatter(
+        val sequence: Long,
+        val time: String,
+        val logLevel: String,
+        val pid: Int,
+        val tid: String,
+        val tag: String,
+        val msg: String
+    )
 
 }

@@ -2,8 +2,8 @@
  * 版本信息
  */
 interface Versions {
-    def buildTool = '33.0.0'
-    def minSdk = 23
+    def buildTool = '33.0.1'
+    def minSdk = 24
     def targetSdk = 31
     def compileSdk = 31
 }
@@ -294,7 +294,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.3.3'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.3.7'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
@@ -321,6 +321,9 @@ interface Deps {
 
     //baiduLocation
     String baiduLocation = 'com.baidu.lbsyun:BaiduMapSDK_Location:9.3.7'
+
+    //tencentLocation
+    String tencentLocation = 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.4.9.5'
 
     //ffmpegCommand : https://github.com/AnJoiner/FFmpegCommand
     String ffmpegCommand = 'com.github.AnJoiner:FFmpegCommand:1.2.2-lite'

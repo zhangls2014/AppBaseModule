@@ -18,7 +18,7 @@ import com.zhangls.base.extension.wrapContent
  */
 open class FragmentLoadingView : CoordinatorLayout {
 
-    private val loadingView by lazy {
+    val loadingView by lazy {
         LoadingView(context).apply {
             visibility = View.GONE
             layoutParams = coordinatorLayoutParams(wrapContent, wrapContent) {

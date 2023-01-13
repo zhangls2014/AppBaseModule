@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
  *
  * @author zhangls
  */
+@Deprecated("LiveDataEvent 已经不推荐使用，可以使用 Flow 更灵活的订阅数据")
 class LiveDataEvent<out T>(private val content: T) {
 
     var hasBeenHandled = false

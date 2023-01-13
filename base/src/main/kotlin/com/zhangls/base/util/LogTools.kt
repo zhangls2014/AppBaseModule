@@ -37,9 +37,9 @@ object LogTools {
         Glog.initialize(level)
     }
 
-    fun init(applicationContext: Context) {
+    fun init(applicationContext: Context, filenamePrefix: String = "glog-dualrecord") {
         glog = Glog.Builder(applicationContext)
-            .protoName("glog-dualrecord")
+            .protoName(filenamePrefix)
             .rootDirectory(applicationContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)?.path)
             .encryptMode(Glog.EncryptMode.None)
             .incrementalArchive(true)

@@ -339,7 +339,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    implementation 'com.github.zhangls2014:BaseUtils:0.3.8'
+    implementation 'com.github.zhangls2014:BaseUtils:0.4.0'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     implementation 'com.github.zhangls2014:JSBridge:1.1'

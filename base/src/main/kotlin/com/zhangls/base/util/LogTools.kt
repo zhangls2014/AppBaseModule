@@ -106,7 +106,7 @@ object LogTools {
         }
     }
 
-    fun convertToJsonFile(path: String, outputPath: String) {
+    fun convertToJsonFile(path: String, outputPath: String, writedCallback: (() -> Unit)? = null) {
         runCatching {
             glog.openReader(path)
         }.onSuccess { reader ->
@@ -134,6 +134,7 @@ object LogTools {
                 }
                 it.write("]".toByteArray())
             }
+            writedCallback?.invoke()
         }
     }
 

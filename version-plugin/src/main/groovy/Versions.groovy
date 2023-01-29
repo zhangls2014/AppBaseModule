@@ -4,8 +4,8 @@
 interface Versions {
     def buildTool = '33.0.1'
     def minSdk = 24
-    def targetSdk = 31
-    def compileSdk = 31
+    def targetSdk = 33
+    def compileSdk = 33
 }
 
 /**
@@ -23,18 +23,24 @@ interface Deps {
     String extJunit = 'androidx.test.ext:junit:1.1.3'
     //espresso
     String espresso = 'androidx.test.espresso:espresso-core:3.4.0'
+    //composeUIJunit
+    String composeUIJunit = 'androidx.compose.ui:ui-test-junit4:1.3.3'
+    //composeUITooling
+    String composeUITooling = 'androidx.compose.ui:ui-tooling:1.3.3'
+    //composeUIManifest
+    String composeUIManifest = 'androidx.compose.ui:ui-test-manifest:1.2.0'
 
     /*
      * androidx
      */
     //appcompat
-    String appcompat = 'androidx.appcompat:appcompat:1.4.2'
+    String appcompat = 'androidx.appcompat:appcompat:1.6.0'
     //fragment
-    String fragment = 'androidx.fragment:fragment-ktx:1.5.1'
+    String fragment = 'androidx.fragment:fragment-ktx:1.5.4'
     //activity
-    String activity = 'androidx.activity:activity:1.5.1'
+    String activity = 'androidx.activity:activity:1.6.0'
     //andAnnotations
-    String andAnnotations = 'androidx.annotation:annotation:1.3.0'
+    String andAnnotations = 'androidx.annotation:annotation:1.5.0'
     //materialDesign
     String materialDesign = 'com.google.android.material:material:1.6.1'
     //cardView
@@ -46,7 +52,7 @@ interface Deps {
     //constraintLayout
     String constraintLayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
     //coreKtx
-    String coreKtx = 'androidx.core:core-ktx:1.7.0'
+    String coreKtx = 'androidx.core:core-ktx:1.9.0'
     //preference
     String preference = 'androidx.preference:preference:1.2.0'
     //viewpager2
@@ -68,23 +74,23 @@ interface Deps {
      * cameraX
      */
     //cameraXCore
-    String cameraXCore = "androidx.camera:camera-core:1.1.0"
+    String cameraXCore = 'androidx.camera:camera-core:1.1.0'
     //cameraXCamera2
-    String cameraXCamera2 = "androidx.camera:camera-camera2:1.1.0"
+    String cameraXCamera2 = 'androidx.camera:camera-camera2:1.1.0'
     //cameraXLifecycle
-    String cameraXLifecycle = "androidx.camera:camera-lifecycle:1.1.0"
+    String cameraXLifecycle = 'androidx.camera:camera-lifecycle:1.1.0'
     //cameraXView
     String cameraXView = 'androidx.camera:camera-view:1.1.0'
     //cameraXExtensions
-    String cameraXExtensions = "androidx.camera:camera-extensions:1.1.0"
+    String cameraXExtensions = 'androidx.camera:camera-extensions:1.1.0'
 
     /**
      * navigation
      */
     //navigationFragmentKtx
-    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    String navigationFragmentKtx = 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     //navigationUI
-    String navigationUI = "androidx.navigation:navigation-ui:2.5.1"
+    String navigationUI = 'androidx.navigation:navigation-ui:2.5.3'
 
     //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
     String flowEventBus = 'com.github.biubiuqiu0:flow-event-bus:0.0.2'
@@ -106,7 +112,19 @@ interface Deps {
     String gson = 'com.google.code.gson:gson:2.9.0'
 
     //coroutinesAndroid
-    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    /*
+     * compose
+     */
+    //composeActivity
+    String composeActivity = 'androidx.activity:activity-compose:1.4.0'
+    //composeUI
+    String composeUI = 'androidx.compose.ui:ui:1.3.3'
+    //composePreview
+    String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.3.3'
+    //composeMaterial3
+    String composeMaterial3 = 'androidx.compose.material3:material3:1.0.0-alpha11'
 
     /*
      * 模块化框架
@@ -139,12 +157,14 @@ interface Deps {
     String slf4j = 'org.slf4j:slf4j-api:1.7.32'
 
     //mavericks : https://github.com/airbnb/mavericks
-    String mavericks = 'com.airbnb.android:mavericks:2.5.1'
+    String mavericks = 'com.airbnb.android:mavericks:3.0.1'
     //mavericksNavigation
-    String mavericksNavigation = 'com.airbnb.android:mavericks-navigation:2.5.1'
+    String mavericksNavigation = 'com.airbnb.android:mavericks-navigation:3.0.1'
+    //mavericksCompose
+    String mavericksCompose = 'com.airbnb.android:mavericks-compose:3.0.1'
 
     //convex : https://github.com/ParadiseHell/convex
-    String convex = "org.paradisehell.convex:convex:1.0.0"
+    String convex = 'org.paradisehell.convex:convex:1.0.0'
 
     /**
      * room

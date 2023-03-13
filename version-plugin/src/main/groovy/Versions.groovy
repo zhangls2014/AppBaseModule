@@ -2,9 +2,9 @@
  * 版本信息
  */
 interface Versions {
-    def buildTool = '33.0.1'
+    def buildTool = '33.0.2'
     def minSdk = 24
-    def targetSdk = 33
+    def targetSdk = 31
     def compileSdk = 33
 }
 
@@ -38,7 +38,7 @@ interface Deps {
     //fragment
     String fragment = 'androidx.fragment:fragment-ktx:1.5.4'
     //activity
-    String activity = 'androidx.activity:activity:1.6.0'
+    String activity = 'androidx.activity:activity:1.6.1'
     //andAnnotations
     String andAnnotations = 'androidx.annotation:annotation:1.5.0'
     //materialDesign
@@ -67,6 +67,8 @@ interface Deps {
      */
     //lifecycleRuntime
     String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    //lifecycleCompose
+    String lifecycleCompose = 'androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha05'
     //viewModel
     String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
@@ -118,13 +120,15 @@ interface Deps {
      * compose
      */
     //composeActivity
-    String composeActivity = 'androidx.activity:activity-compose:1.4.0'
+    String composeActivity = 'androidx.activity:activity-compose:1.6.1'
     //composeUI
     String composeUI = 'androidx.compose.ui:ui:1.3.3'
     //composePreview
     String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.3.3'
+    //composeMaterial
+    String composeMaterial = 'androidx.compose.material:material:1.3.1'
     //composeMaterial3
-    String composeMaterial3 = 'androidx.compose.material3:material3:1.0.0-alpha11'
+    String composeMaterial3 = 'androidx.compose.material3:material3:1.0.1'
 
     /*
      * 模块化框架
@@ -142,11 +146,11 @@ interface Deps {
     //retrofit2ConverterGson
     String retrofit2ConverterGson = 'com.squareup.retrofit2:converter-gson:2.9.0'
     //okHttp
-    String okHttp = 'com.squareup.okhttp3:okhttp:4.9.3'
+    String okHttp = 'com.squareup.okhttp3:okhttp:4.10.0'
     //okHttpLogging
-    String okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    String okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.10.0'
     //okio
-    String okio = 'com.squareup.okio:okio:2.10.0'
+    String okio = 'com.squareup.okio:okio:3.2.0'
 
     //multiType
     String multiType = 'com.drakeet.multitype:multitype:4.3.0'
@@ -154,7 +158,7 @@ interface Deps {
     String swipeRefreshLayout = 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     //slf4j
-    String slf4j = 'org.slf4j:slf4j-api:1.7.32'
+    String slf4j = 'org.slf4j:slf4j-api:2.0.0'
 
     //mavericks : https://github.com/airbnb/mavericks
     String mavericks = 'com.airbnb.android:mavericks:3.0.1'
@@ -198,13 +202,13 @@ interface Deps {
      * 图片加载
      */
     //coil : https://github.com/coil-kt/coil
-    String coil = 'io.coil-kt:coil:1.4.0'
+    String coil = 'io.coil-kt:coil:2.2.2'
     //coilBase
-    String coilBase = 'io.coil-kt:coil-base:1.4.0'
+    String coilBase = 'io.coil-kt:coil-base:2.2.2'
     //coilGif
-    String coilGif = 'io.coil-kt:coil-gif:1.4.0'
+    String coilGif = 'io.coil-kt:coil-gif:2.2.2'
     //coilSVG
-    String coilSVG = 'io.coil-kt:coil-svg:1.4.0'
+    String coilSVG = 'io.coil-kt:coil-svg:2.2.2'
 
     //glide
     String glide = 'com.github.bumptech.glide:glide:4.14.2'
@@ -212,7 +216,7 @@ interface Deps {
     String glideCompiler = 'com.github.bumptech.glide:compiler:4.14.2'
 
     //XXPermissions : https://github.com/getActivity/XXPermissions
-    String XXPermissions = 'com.github.getActivity:XXPermissions:16.0'
+    String XXPermissions = 'com.github.getActivity:XXPermissions:16.6'
 
     //compressor : https://github.com/zetbaitsu/Compressor
     String compressor = 'id.zelory:compressor:3.0.1'
@@ -325,13 +329,16 @@ interface Deps {
     String huaweiFace = 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
-    String deviceName = 'com.jaredrummler:android-device-names:2.1.0'
+    String deviceName = 'com.jaredrummler:android-device-names:2.1.1'
 
     //amapLocation : 高德地图定位 SDK
     String amapLocation = 'com.amap.api:location:6.2.0'
 
     //aliOSS
     String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'
+
+    //huaweiOBS
+    String huaweiOBS = 'com.huaweicloud:esdk-obs-android:3.21.12'
 
     //logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
     String logan = 'com.dianping.android.sdk:logan:1.2.4'
@@ -350,4 +357,7 @@ interface Deps {
 
     //protobuf
     String protobuf = 'com.google.protobuf:protobuf-lite:3.0.1'
+
+    //ToastUtils : https://github.com/getActivity/ToastUtils
+    String ToastUtils = 'com.github.getActivity:ToastUtils:11.2'
 }

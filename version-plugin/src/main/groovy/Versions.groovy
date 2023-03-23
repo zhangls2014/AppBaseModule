@@ -129,6 +129,8 @@ interface Deps {
     String composeMaterial = 'androidx.compose.material:material:1.3.1'
     //composeMaterial3
     String composeMaterial3 = 'androidx.compose.material3:material3:1.0.1'
+    //composeConstraintLayout
+    String composeConstraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
 
     /*
      * 模块化框架
@@ -338,7 +340,7 @@ interface Deps {
     String aliOSS = 'com.aliyun.dpa:oss-android-sdk:2.9.11'
 
     //huaweiOBS
-    String huaweiOBS = 'com.huaweicloud:esdk-obs-android:3.21.12'
+    String huaweiOBS = 'com.huaweicloud:esdk-obs-android:3.22.3'
 
     //logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
     String logan = 'com.dianping.android.sdk:logan:1.2.4'

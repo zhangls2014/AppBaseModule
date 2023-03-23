@@ -109,11 +109,11 @@ dependencies {
      * lifecycle
      */
     //lifecycleRuntime
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
     //lifecycleCompose
-    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha05'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.6.1'
     //viewModel
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
 
     /*
      * cameraX
@@ -174,6 +174,8 @@ dependencies {
     implementation 'androidx.compose.material3:material3:1.0.1'
     //composeConstraintLayout
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    //composeNavigation
+    implementation 'androidx.navigation:navigation-compose:2.5.3'
 
     /*
      * 模块化框架
@@ -363,7 +365,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    implementation 'com.github.zhangls2014:BaseUtils:0.4.0'
+    implementation 'com.github.zhangls2014:BaseUtils:0.4.1'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     implementation 'com.github.zhangls2014:JSBridge:1.1'

@@ -66,11 +66,11 @@ interface Deps {
      * lifecycle
      */
     //lifecycleRuntime
-    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    String lifecycleRuntime = 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
     //lifecycleCompose
-    String lifecycleCompose = 'androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha05'
+    String lifecycleCompose = 'androidx.lifecycle:lifecycle-runtime-compose:2.6.1'
     //viewModel
-    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    String viewModel = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
 
     /*
      * cameraX
@@ -131,6 +131,8 @@ interface Deps {
     String composeMaterial3 = 'androidx.compose.material3:material3:1.0.1'
     //composeConstraintLayout
     String composeConstraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+    //composeNavigation
+    String composeNavigation = 'androidx.navigation:navigation-compose:2.5.3'
 
     /*
      * 模块化框架
@@ -320,7 +322,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.0'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.1'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'

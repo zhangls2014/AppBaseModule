@@ -18,29 +18,29 @@ interface Deps {
     //junit
     String junit = 'junit:junit:4.13.2'
     //runner
-    String runner = 'androidx.test:runner:1.4.0'
+    String runner = 'androidx.test:runner:1.5.0'
     //extJunit
-    String extJunit = 'androidx.test.ext:junit:1.1.3'
+    String extJunit = 'androidx.test.ext:junit:1.1.5'
     //espresso
-    String espresso = 'androidx.test.espresso:espresso-core:3.4.0'
+    String espresso = 'androidx.test.espresso:espresso-core:3.5.0'
     //composeUIJunit
     String composeUIJunit = 'androidx.compose.ui:ui-test-junit4:1.3.3'
     //composeUITooling
     String composeUITooling = 'androidx.compose.ui:ui-tooling:1.3.3'
     //composeUIManifest
-    String composeUIManifest = 'androidx.compose.ui:ui-test-manifest:1.2.0'
+    String composeUIManifest = 'androidx.compose.ui:ui-test-manifest:1.3.3'
 
     /*
      * androidx
      */
     //appcompat
-    String appcompat = 'androidx.appcompat:appcompat:1.6.0'
+    String appcompat = 'androidx.appcompat:appcompat:1.6.1'
     //fragment
     String fragment = 'androidx.fragment:fragment-ktx:1.5.4'
     //activity
-    String activity = 'androidx.activity:activity:1.6.1'
+    String activity = 'androidx.activity:activity:1.7.0'
     //andAnnotations
-    String andAnnotations = 'androidx.annotation:annotation:1.5.0'
+    String andAnnotations = 'androidx.annotation:annotation:1.6.0'
     //materialDesign
     String materialDesign = 'com.google.android.material:material:1.6.1'
     //cardView
@@ -76,9 +76,9 @@ interface Deps {
      * cameraX
      */
     //cameraXCore
-    String cameraXCore = 'androidx.camera:camera-core:1.1.0'
+    String cameraXCore = 'androidx.camera:camera-core:1.2.2'
     //cameraXCamera2
-    String cameraXCamera2 = 'androidx.camera:camera-camera2:1.1.0'
+    String cameraXCamera2 = 'androidx.camera:camera-camera2:1.2.2'
     //cameraXLifecycle
     String cameraXLifecycle = 'androidx.camera:camera-lifecycle:1.1.0'
     //cameraXView
@@ -154,7 +154,7 @@ interface Deps {
     //okHttpLogging
     String okHttpLogging = 'com.squareup.okhttp3:logging-interceptor:4.10.0'
     //okio
-    String okio = 'com.squareup.okio:okio:3.2.0'
+    String okio = 'com.squareup.okio:okio:3.3.0'
 
     //multiType
     String multiType = 'com.drakeet.multitype:multitype:4.3.0'
@@ -170,9 +170,6 @@ interface Deps {
     String mavericksNavigation = 'com.airbnb.android:mavericks-navigation:3.0.1'
     //mavericksCompose
     String mavericksCompose = 'com.airbnb.android:mavericks-compose:3.0.1'
-
-    //convex : https://github.com/ParadiseHell/convex
-    String convex = 'org.paradisehell.convex:convex:1.0.0'
 
     /**
      * room
@@ -206,13 +203,15 @@ interface Deps {
      * 图片加载
      */
     //coil : https://github.com/coil-kt/coil
-    String coil = 'io.coil-kt:coil:2.2.2'
+    String coil = 'io.coil-kt:coil:2.3.0'
     //coilBase
-    String coilBase = 'io.coil-kt:coil-base:2.2.2'
+    String coilBase = 'io.coil-kt:coil-base:2.3.0'
     //coilGif
     String coilGif = 'io.coil-kt:coil-gif:2.2.2'
     //coilSVG
     String coilSVG = 'io.coil-kt:coil-svg:2.2.2'
+    //composeCoil
+    String composeCoil = 'io.coil-kt:coil-compose:2.3.0'
 
     //glide
     String glide = 'com.github.bumptech.glide:glide:4.14.2'

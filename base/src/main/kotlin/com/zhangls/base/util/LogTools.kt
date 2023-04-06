@@ -37,6 +37,7 @@ object LogTools {
         Glog.initialize(level)
     }
 
+    @JvmStatic
     fun init(applicationContext: Context, filenamePrefix: String = "glog-dualrecord") {
         glog = Glog.Builder(applicationContext)
             .protoName(filenamePrefix)
@@ -54,32 +55,38 @@ object LogTools {
         }
     }
 
+    @JvmStatic
     fun i(tag: String, log: String) {
         Timber.i("$tag, $log")
         write(serializeLog(LogProtos.Log.Level.INFO, tag, log))
     }
 
+    @JvmStatic
     fun d(tag: String, log: String) {
         Timber.d("$tag, $log")
         write(serializeLog(LogProtos.Log.Level.DEBUG, tag, log))
     }
 
+    @JvmStatic
     fun e(tag: String, log: String) {
         Timber.e("$tag, $log")
         write(serializeLog(LogProtos.Log.Level.ERROR, tag, log))
     }
 
+    @JvmStatic
     fun v(tag: String, log: String) {
         Timber.v("$tag, $log")
         write(serializeLog(LogProtos.Log.Level.VERBOSE, tag, log))
     }
 
+    @JvmStatic
     fun w(tag: String, log: String) {
         Timber.w("$tag, $log")
 
         write(serializeLog(LogProtos.Log.Level.WARN, tag, log))
     }
 
+    @JvmStatic
     fun write(level: LogProtos.Log.Level, tag: String, log: String) {
         write(serializeLog(level, tag, log))
     }
@@ -90,12 +97,14 @@ object LogTools {
         }
     }
 
+    @JvmStatic
     fun flush() {
         if (::glog.isInitialized) {
             glog.flush()
         }
     }
 
+    @JvmStatic
     fun getArchiveSnapshot(): List<String> {
         return if (::glog.isInitialized.not()) {
             emptyList()
@@ -106,6 +115,7 @@ object LogTools {
         }
     }
 
+    @JvmStatic
     fun convertToJsonFile(path: String, outputPath: String, writedCallback: (() -> Unit)? = null) {
         runCatching {
             glog.openReader(path)

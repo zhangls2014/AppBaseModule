@@ -364,15 +364,15 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    implementation 'com.github.zhangls2014:BaseUtils:0.4.1'
+    implementation 'com.github.zhangls2014:BaseUtils:0.4.2'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     implementation 'com.github.zhangls2014:JSBridge:1.1'
 
     //huaweiFaceShapePointModel
-    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.7.0.301'
     //huaweiFace
-    implementation 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+    implementation 'com.huawei.hms:ml-computer-vision-face:3.7.0.301'
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     implementation 'com.jaredrummler:android-device-names:2.1.1'

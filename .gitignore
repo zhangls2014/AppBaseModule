@@ -20,3 +20,4 @@ local.properties
 /.idea/jarRepositories.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/findbugs-idea.xml
+/.idea/kotlinc.xml

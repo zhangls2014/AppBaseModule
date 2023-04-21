@@ -3,13 +3,18 @@ package com.zhangls.base.view.dialog
 import android.app.Dialog
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
 import com.zhangls.base.R
+import com.zhangls.base.extension.hideSystemBars
 import com.zhangls.base.extension.onClick
 
 /**
@@ -23,7 +28,7 @@ import com.zhangls.base.extension.onClick
  *
  * @author zhangls
  */
-class SimpleDialog private constructor() : AppCompatDialogFragment() {
+class SimpleDialog : AppCompatDialogFragment() {
     private lateinit var simpleView: View
 
     // 按钮点击事件回调
@@ -37,6 +42,7 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
         private const val KEY_POSITIVE_TEXT = "key_positive_text"
         private const val KEY_NEGATIVE_TEXT = "key_negative_text"
         private const val KEY_LAYOUT_ID = "key_layout_id"
+        private const val KEY_HIDE_SYSTEM_BAR = "key_hide_system_bar"
 
 
         fun newInstance(
@@ -44,7 +50,8 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
             content: CharSequence,
             positiveText: CharSequence,
             negativeText: CharSequence?,
-            layoutId: Int? = null
+            layoutId: Int? = null,
+            hideSystemBar: Boolean = false,
         ): SimpleDialog {
             return SimpleDialog().apply {
                 arguments = bundleOf(
@@ -52,20 +59,18 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
                     KEY_CONTENT to content,
                     KEY_POSITIVE_TEXT to positiveText,
                     KEY_NEGATIVE_TEXT to negativeText,
-                    KEY_LAYOUT_ID to layoutId
+                    KEY_LAYOUT_ID to layoutId,
+                    KEY_HIDE_SYSTEM_BAR to hideSystemBar
                 )
             }
         }
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = super.onCreateDialog(savedInstanceState)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.window?.setFlags(
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-        )
-        return dialog
+        return super.onCreateDialog(savedInstanceState).also {
+            it.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            it.window?.addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -106,12 +111,19 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
         return simpleView
     }
 
-    @Suppress("DEPRECATION")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (arguments?.getBoolean(KEY_HIDE_SYSTEM_BAR) == true) {
+            dialog?.window?.hideSystemBars()
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         isCancelable = false
 
         setLayout(resources.configuration.orientation)
+        dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -133,8 +145,7 @@ class SimpleDialog private constructor() : AppCompatDialogFragment() {
         }
     }
 
-    override fun show(manager: FragmentManager, tag: String?) {
-        super.show(manager, tag)
-        dialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE)
+    fun show(manager: FragmentManager) {
+        super.show(manager, null)
     }
 }

@@ -321,15 +321,15 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.1'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.2'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'
 
     //huaweiFaceShapePointModel
-    String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:2.0.5.300'
+    String huaweiFaceShapePointModel = 'com.huawei.hms:ml-computer-vision-face-shape-point-model:3.7.0.301'
     //huaweiFace
-    String huaweiFace = 'com.huawei.hms:ml-computer-vision-face:2.0.5.300'
+    String huaweiFace = 'com.huawei.hms:ml-computer-vision-face:3.7.0.301'
 
     //deviceName : https://github.com/jaredrummler/AndroidDeviceNames
     String deviceName = 'com.jaredrummler:android-device-names:2.1.1'

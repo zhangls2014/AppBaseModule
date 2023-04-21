@@ -13,7 +13,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
 import com.zhangls.base.R
-import com.zhangls.base.extension.*
+import com.zhangls.base.extension.colorInt
+import com.zhangls.base.extension.constraintLayoutParams
+import com.zhangls.base.extension.dp
+import com.zhangls.base.extension.dpFloat
+import com.zhangls.base.extension.matchConstraint
+import com.zhangls.base.extension.parentId
+import com.zhangls.base.extension.wrapContent
 
 /**
  * @author zhangls
@@ -46,6 +52,7 @@ class SimpleView : ConstraintLayout {
         View(context).apply {
             id = R.id.viewDivider
             setBackgroundColor(Color.parseColor("#FFD9D9D9"))
+
             layoutParams = constraintLayoutParams(matchConstraint, 1) {
                 topToBottom = R.id.tvTitle
                 leftToLeft = parentId
@@ -81,6 +88,7 @@ class SimpleView : ConstraintLayout {
             cornerRadius = 4.dp
             setTextColor(context.colorInt(R.color.base_white))
             setBackgroundColor(context.colorInt(R.color.base_dark_blue))
+            minHeight = 56.dp
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
                 leftToLeft = parentId
@@ -103,6 +111,7 @@ class SimpleView : ConstraintLayout {
             cornerRadius = 4.dp
             setTextColor(context.colorInt(R.color.base_white))
             setBackgroundColor(context.colorInt(R.color.base_red))
+            minHeight = 56.dp
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
                 leftToRight = R.id.mbNegative

@@ -24,11 +24,11 @@ interface Deps {
     //espresso
     String espresso = 'androidx.test.espresso:espresso-core:3.5.0'
     //composeUIJunit
-    String composeUIJunit = 'androidx.compose.ui:ui-test-junit4:1.3.3'
+    String composeUIJunit = 'androidx.compose.ui:ui-test-junit4:1.4.0'
     //composeUITooling
-    String composeUITooling = 'androidx.compose.ui:ui-tooling:1.3.3'
+    String composeUITooling = 'androidx.compose.ui:ui-tooling:1.4.0'
     //composeUIManifest
-    String composeUIManifest = 'androidx.compose.ui:ui-test-manifest:1.3.3'
+    String composeUIManifest = 'androidx.compose.ui:ui-test-manifest:1.4.0'
 
     /*
      * androidx
@@ -120,11 +120,11 @@ interface Deps {
      * compose
      */
     //composeActivity
-    String composeActivity = 'androidx.activity:activity-compose:1.6.1'
+    String composeActivity = 'androidx.activity:activity-compose:1.7.0'
     //composeUI
-    String composeUI = 'androidx.compose.ui:ui:1.3.3'
+    String composeUI = 'androidx.compose.ui:ui:1.4.0'
     //composePreview
-    String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.3.3'
+    String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.4.0'
     //composeMaterial
     String composeMaterial = 'androidx.compose.material:material:1.3.1'
     //composeMaterial3
@@ -321,7 +321,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.2'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.4'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'

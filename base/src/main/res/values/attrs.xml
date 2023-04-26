@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TextButton">
+    <declare-styleable name="MaterialButtonMin">
         <attr name="materialButtonMinStyle" format="reference" />
         <attr name="materialButtonOutlinedMinStyle" format="reference" />
         <attr name="materialButtonTextMinStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialButtonMid">
+        <attr name="materialButtonMidStyle" format="reference" />
+        <attr name="materialButtonOutlinedMidStyle" format="reference" />
+        <attr name="materialButtonTextMidStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TextButton">
+        <attr name="materialButtonTextStyle" format="reference" />
     </declare-styleable>
 </resources>

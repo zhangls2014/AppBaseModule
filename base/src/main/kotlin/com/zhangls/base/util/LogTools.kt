@@ -2,7 +2,9 @@ package com.zhangls.base.util
 
 import android.content.Context
 import android.os.Environment
+import com.blankj.utilcode.constant.TimeConstants
 import com.blankj.utilcode.util.FileUtils
+import com.blankj.utilcode.util.TimeUtils
 import com.google.gson.GsonBuilder
 import com.zhangls.base.BuildConfig
 import com.zhangls.base.LogProtos
@@ -10,8 +12,6 @@ import com.zhangls.base.util.LogTools.init
 import glog.android.Glog
 import timber.log.Timber
 import java.io.File
-import java.text.SimpleDateFormat
-import java.util.*
 import java.util.concurrent.atomic.AtomicLong
 
 
@@ -168,7 +168,7 @@ object LogTools {
     private fun LogProtos.Log.string(): String {
         return LogFormatter(
             sequence,
-            SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Date(timestamp.toLong())),
+            TimeUtils.getString(timestamp.toLong(), 0, TimeConstants.MSEC),
             logLevel.name,
             pid,
             tid,

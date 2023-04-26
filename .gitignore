@@ -21,3 +21,6 @@ local.properties
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/findbugs-idea.xml
 /.idea/kotlinc.xml
+/.idea/aws.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml

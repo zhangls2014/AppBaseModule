@@ -321,7 +321,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.7'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.8'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'

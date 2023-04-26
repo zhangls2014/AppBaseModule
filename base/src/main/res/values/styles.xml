@@ -23,22 +23,22 @@
     </style>
 
     <style name="MaterialButton.Mid" parent="Widget.MaterialComponents.Button">
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">42dp</item>
+        <item name="android:minWidth">68dp</item>
+        <item name="android:minHeight">44dp</item>
         <item name="android:paddingLeft">12dp</item>
         <item name="android:paddingRight">12dp</item>
     </style>
 
     <style name="OutlinedButton.Mid" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">42dp</item>
+        <item name="android:minWidth">68dp</item>
+        <item name="android:minHeight">44dp</item>
         <item name="android:paddingLeft">12dp</item>
         <item name="android:paddingRight">12dp</item>
     </style>
 
     <style name="TextButton.Mid" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">42dp</item>
+        <item name="android:minWidth">68dp</item>
+        <item name="android:minHeight">44dp</item>
         <item name="android:paddingLeft">12dp</item>
         <item name="android:paddingRight">12dp</item>
     </style>

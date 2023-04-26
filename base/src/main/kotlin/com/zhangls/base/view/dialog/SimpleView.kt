@@ -88,7 +88,6 @@ class SimpleView : ConstraintLayout {
             cornerRadius = 4.dp
             setTextColor(context.colorInt(R.color.base_white))
             setBackgroundColor(context.colorInt(R.color.base_dark_blue))
-            minHeight = 56.dp
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
                 leftToLeft = parentId
@@ -111,7 +110,6 @@ class SimpleView : ConstraintLayout {
             cornerRadius = 4.dp
             setTextColor(context.colorInt(R.color.base_white))
             setBackgroundColor(context.colorInt(R.color.base_red))
-            minHeight = 56.dp
 
             layoutParams = constraintLayoutParams(matchConstraint, wrapContent) {
                 leftToRight = R.id.mbNegative

@@ -22,8 +22,9 @@ static def gitVersionTag() {
 }
 
 android {
+    namespace = "com.zhangls.base"
     compileSdk Versions.compileSdk
-    buildToolsVersion Versions.buildTool
+    buildToolsVersion = Versions.buildTool
 
     defaultConfig {
         minSdk Versions.minSdk
@@ -47,11 +48,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    sourceSets {
-        main {
-            java.srcDirs = ['src/main/kotlin']
-        }
     }
     lintOptions {
         disable 'SpUsage', 'RtlHardcoded'

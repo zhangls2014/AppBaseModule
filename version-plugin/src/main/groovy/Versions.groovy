@@ -4,7 +4,7 @@
 interface Versions {
     def buildTool = '33.0.2'
     def minSdk = 24
-    def targetSdk = 31
+    def targetSdk = 33
     def compileSdk = 33
 }
 
@@ -18,11 +18,11 @@ interface Deps {
     //junit
     String junit = 'junit:junit:4.13.2'
     //runner
-    String runner = 'androidx.test:runner:1.5.0'
+    String runner = 'androidx.test:runner:1.5.2'
     //extJunit
     String extJunit = 'androidx.test.ext:junit:1.1.5'
     //espresso
-    String espresso = 'androidx.test.espresso:espresso-core:3.5.0'
+    String espresso = 'androidx.test.espresso:espresso-core:3.5.1'
     //composeUIJunit
     String composeUIJunit = 'androidx.compose.ui:ui-test-junit4:1.4.0'
     //composeUITooling
@@ -36,17 +36,17 @@ interface Deps {
     //appcompat
     String appcompat = 'androidx.appcompat:appcompat:1.6.1'
     //fragment
-    String fragment = 'androidx.fragment:fragment-ktx:1.5.4'
+    String fragment = 'androidx.fragment:fragment-ktx:1.5.6'
     //activity
     String activity = 'androidx.activity:activity:1.7.0'
     //andAnnotations
     String andAnnotations = 'androidx.annotation:annotation:1.6.0'
     //materialDesign
-    String materialDesign = 'com.google.android.material:material:1.6.1'
+    String materialDesign = 'com.google.android.material:material:1.8.0'
     //cardView
     String cardView = 'androidx.cardview:cardview:1.0.0'
     //recyclerView
-    String recyclerView = 'androidx.recyclerview:recyclerview:1.2.1'
+    String recyclerView = 'androidx.recyclerview:recyclerview:1.3.0'
     //transition
     String transition = 'androidx.transition:transition:1.4.1'
     //constraintLayout
@@ -80,11 +80,11 @@ interface Deps {
     //cameraXCamera2
     String cameraXCamera2 = 'androidx.camera:camera-camera2:1.2.2'
     //cameraXLifecycle
-    String cameraXLifecycle = 'androidx.camera:camera-lifecycle:1.1.0'
+    String cameraXLifecycle = 'androidx.camera:camera-lifecycle:1.2.2'
     //cameraXView
-    String cameraXView = 'androidx.camera:camera-view:1.1.0'
+    String cameraXView = 'androidx.camera:camera-view:1.2.2'
     //cameraXExtensions
-    String cameraXExtensions = 'androidx.camera:camera-extensions:1.1.0'
+    String cameraXExtensions = 'androidx.camera:camera-extensions:1.2.2'
 
     /**
      * navigation
@@ -126,7 +126,7 @@ interface Deps {
     //composePreview
     String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.4.0'
     //composeMaterial
-    String composeMaterial = 'androidx.compose.material:material:1.3.1'
+    String composeMaterial = 'androidx.compose.material:material:1.4.0'
     //composeMaterial3
     String composeMaterial3 = 'androidx.compose.material3:material3:1.0.1'
     //composeConstraintLayout
@@ -175,15 +175,15 @@ interface Deps {
      * room
      */
     //roomRuntime
-    String roomRuntime = 'androidx.room:room-runtime:2.4.3'
+    String roomRuntime = 'androidx.room:room-runtime:2.5.1'
     //roomCompiler
-    String roomCompiler = 'androidx.room:room-compiler:2.4.3'
+    String roomCompiler = 'androidx.room:room-compiler:2.5.1'
     //roomKtx : Kotlin Extensions and Coroutines support for Room
-    String roomKtx = 'androidx.room:room-ktx:2.4.3'
+    String roomKtx = 'androidx.room:room-ktx:2.5.1'
     //roomCoroutines
     String roomCoroutines = 'androidx.room:room-coroutines:2.1.0-alpha04'
     //roomPaging
-    String roomPaging = 'androidx.room:room-paging:2.4.3'
+    String roomPaging = 'androidx.room:room-paging:2.5.1'
 
     //tencentIM
     String tencentIM = 'com.tencent.imsdk:imsdk:5.1.66'
@@ -224,11 +224,14 @@ interface Deps {
     //compressor : https://github.com/zetbaitsu/Compressor
     String compressor = 'id.zelory:compressor:3.0.1'
 
+    // uCrop : https://github.com/Yalantis/uCrop
+    String uCrop = 'com.github.yalantis:ucrop:2.2.6'
+
     /*
      * bug反馈
      */
     //bugly
-    String bugly = 'com.tencent.bugly:crashreport:4.1.9'
+    String bugly = 'com.tencent.bugly:crashreport:4.1.9.2'
     //buglyNDK
     String buglyNDK = 'com.tencent.bugly:nativecrashreport:3.9.2'
 
@@ -256,11 +259,11 @@ interface Deps {
     String pdfium = 'com.github.barteksc:pdfium-android:1.9.0'
 
     //exoPlayer: https://github.com/google/ExoPlayer
-    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.18.1'
+    String exoPlayer = 'com.google.android.exoplayer:exoplayer:2.18.5'
     //exoCore: https://github.com/google/ExoPlayer
-    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.18.1'
+    String exoCore = 'com.google.android.exoplayer:exoplayer-core:2.18.5'
     //exoUI: https://github.com/google/ExoPlayer
-    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.18.1'
+    String exoUI = 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
 
     /*
      * 自定义view
@@ -281,8 +284,8 @@ interface Deps {
     String androidPickerView = 'com.contrarywind:Android-PickerView:4.1.9'
     //switchButton : https://github.com/kyleduo/SwitchButton
     String switchButton = 'com.kyleduo.switchbutton:library:2.1.0'
-    //easyPhotos : https://github.com/joker-fu/EasyPhotos
-    String easyPhotos = 'io.github.joker-fu:EasyPhotos:andX-2.5.7'
+    //easyPhotos : https://github.com/zhangls2014/EasyPhotos
+    String easyPhotos = 'com.github.zhangls2014:EasyPhotos:andX-2.5.8'
 
     //tencentRTC
     String tencentRTC = 'com.tencent.liteav:LiteAVSDK_TRTC:10.8.0.13052'

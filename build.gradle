@@ -2,16 +2,27 @@
 buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.4.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.1'
     }
 }
 
 plugins {
     id 'version-plugin' apply true
+    id 'com.google.devtools.ksp' version '1.8.22-1.0.11' apply true
 }
 
 versions {
     inputFile = "$rootDir/versions.gradle"
     outputFile = "$rootDir/version-plugin/src/main/groovy/Versions.groovy"
+}
+
+pluginManager.withPlugin("org.jetbrains.kotlin.android") {
+    kotlin {
+        sourceSets.all {
+            languageSettings {
+                languageVersion = "2.0"
+            }
+        }
+    }
 }

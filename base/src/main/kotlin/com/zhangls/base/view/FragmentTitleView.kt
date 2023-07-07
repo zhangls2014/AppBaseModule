@@ -21,7 +21,7 @@ class FragmentTitleView : AppBarLayout {
             title = ""
             setNavigationIcon(R.drawable.base_ic_navigate_before)
 
-            layoutParams = appBarLayoutParams(matchParent, context.dimensionFromAttr(R.attr.actionBarSize)) {
+            layoutParams = appBarLayoutParams(matchParent, context.dimensionFromAttr(android.R.attr.actionBarSize)) {
                 scrollFlags = LayoutParams.SCROLL_FLAG_NO_SCROLL
             }
         }

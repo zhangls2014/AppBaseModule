@@ -8,11 +8,11 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.widget.FrameLayout
-import android.widget.ProgressBar
 import androidx.annotation.StringRes
 import androidx.annotation.UiThread
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.CHAIN_PACKED
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textview.MaterialTextView
 import com.zhangls.base.R
 import com.zhangls.base.extension.*
@@ -64,7 +64,7 @@ class LoadingView : FrameLayout {
     }
 
     private val progressBar by lazy {
-        ProgressBar(context, null, 0, R.style.Widget_AppCompat_ProgressBar).apply {
+        CircularProgressIndicator(context).apply {
             id = R.id.progressBar
             isIndeterminate = true
             layoutParams = constraintLayoutParams(wrapContent, wrapContent) {

@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
     id 'com.google.protobuf'
+    id 'com.google.devtools.ksp'
 }
 
 // 读取 git 的提交数量作为版本号
@@ -51,6 +52,9 @@ android {
     }
     lintOptions {
         disable 'SpUsage', 'RtlHardcoded'
+    }
+    buildFeatures {
+        buildConfig = true
     }
     packagingOptions {
         pickFirst 'lib/arm64-v8a/libc++_shared.so'

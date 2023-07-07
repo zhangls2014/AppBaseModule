@@ -64,6 +64,12 @@ android {
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         exclude "**/*.proto"
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {

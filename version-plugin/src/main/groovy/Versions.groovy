@@ -2,10 +2,12 @@
  * 版本信息
  */
 interface Versions {
-    def buildTool = '33.0.2'
+    def buildTool = '34.0.0'
     def minSdk = 24
     def targetSdk = 33
     def compileSdk = 33
+
+    def composeBom = '2023.03.00'
 }
 
 /**
@@ -111,7 +113,7 @@ interface Deps {
     //flexBox : https://github.com/google/flexbox-layout
     String flexBox = 'com.google.android:flexbox:2.0.0'
     //gson : https://github.com/google/gson
-    String gson = 'com.google.code.gson:gson:2.9.0'
+    String gson = 'com.google.code.gson:gson:2.10'
 
     //coroutinesAndroid
     String coroutinesAndroid = 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
@@ -121,18 +123,21 @@ interface Deps {
      */
     //composeActivity
     String composeActivity = 'androidx.activity:activity-compose:1.7.0'
-    //composeUI
-    String composeUI = 'androidx.compose.ui:ui:1.4.0'
-    //composePreview
-    String composePreview = 'androidx.compose.ui:ui-tooling-preview:1.4.0'
-    //composeMaterial
-    String composeMaterial = 'androidx.compose.material:material:1.4.0'
-    //composeMaterial3
-    String composeMaterial3 = 'androidx.compose.material3:material3:1.0.1'
     //composeConstraintLayout
     String composeConstraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
     //composeNavigation
     String composeNavigation = 'androidx.navigation:navigation-compose:2.5.3'
+
+    //composeBom
+    String composeBom = 'androidx.compose:compose-bom:2023.06.01'
+    //composeUI
+    String composeUI = 'androidx.compose.ui:ui'
+    //composePreview
+    String composePreview = 'androidx.compose.ui:ui-tooling-preview'
+    //composeMaterial
+    String composeMaterial = 'androidx.compose.material:material'
+    //composeMaterial3
+    String composeMaterial3 = 'androidx.compose.material3:material3'
 
     /*
      * 模块化框架
@@ -324,7 +329,7 @@ interface Deps {
     String timber = 'com.jakewharton.timber:timber:5.0.1'
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.4.8'
+    String baseUtils = 'com.github.zhangls2014:BaseUtils:0.5.0'
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = 'com.github.zhangls2014:JSBridge:1.1'

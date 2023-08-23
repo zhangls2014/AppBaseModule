@@ -57,32 +57,31 @@ object LogTools {
 
     @JvmStatic
     fun i(tag: String, log: String) {
-        Timber.i("$tag, $log")
+        Timber.tag(tag).i(log)
         write(serializeLog(LogProtos.Log.Level.INFO, tag, log))
     }
 
     @JvmStatic
     fun d(tag: String, log: String) {
-        Timber.d("$tag, $log")
+        Timber.tag(tag).d(log)
         write(serializeLog(LogProtos.Log.Level.DEBUG, tag, log))
     }
 
     @JvmStatic
     fun e(tag: String, log: String) {
-        Timber.e("$tag, $log")
+        Timber.tag(tag).e(log)
         write(serializeLog(LogProtos.Log.Level.ERROR, tag, log))
     }
 
     @JvmStatic
     fun v(tag: String, log: String) {
-        Timber.v("$tag, $log")
+        Timber.tag(tag).v(log)
         write(serializeLog(LogProtos.Log.Level.VERBOSE, tag, log))
     }
 
     @JvmStatic
     fun w(tag: String, log: String) {
-        Timber.w("$tag, $log")
-
+        Timber.tag(tag).w(log)
         write(serializeLog(LogProtos.Log.Level.WARN, tag, log))
     }
 

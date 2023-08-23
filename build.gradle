@@ -19,7 +19,7 @@ versions {
 
 pluginManager.withPlugin("org.jetbrains.kotlin.android") {
     kotlin {
-        sourceSets.all {
+        sourceSets.configureEach {
             languageSettings {
                 languageVersion = "2.0"
             }

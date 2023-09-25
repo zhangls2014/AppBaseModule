@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven-publish'
-    id 'com.google.protobuf'
     id 'com.google.devtools.ksp'
 }
 
@@ -91,10 +90,6 @@ dependencies {
     api Deps.retrofit2ConverterGson
     api Deps.okHttpLogging
     api Deps.utilcodex
-    // 日志框架
-    api Deps.glog
-    api Deps.timber
-    api Deps.protobuf
 }
 
 afterEvaluate {
@@ -108,29 +103,6 @@ afterEvaluate {
                 groupId = 'com.zhangls'
                 artifactId = 'base'
                 version = gitVersionTag()
-            }
-        }
-    }
-}
-
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.21.12'
-    }
-    plugins {
-        javalite {
-            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
-        }
-    }
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                // In most cases you don't need the full Java output
-                // if you use the lite output.
-                remove java
-            }
-            task.plugins {
-                javalite {}
             }
         }
     }

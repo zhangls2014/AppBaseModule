@@ -5,9 +5,9 @@ interface Versions {
     def buildTool = "34.0.0"
     def minSdk = 24
     def targetSdk = 33
-    def compileSdk = 33
+    def compileSdk = 34
 
-    def composeBom = "2023.03.00"
+    def composeBom = "2023.08.00"
 }
 
 /**
@@ -28,9 +28,9 @@ interface Deps {
     //composeUIJunit
     String composeUIJunit = "androidx.compose.ui:ui-test-junit4:1.4.3"
     //composeUITooling
-    String composeUITooling = "androidx.compose.ui:ui-tooling:1.4.3"
+    String composeUITooling = "androidx.compose.ui:ui-tooling:1.5.0"
     //composeUIManifest
-    String composeUIManifest = "androidx.compose.ui:ui-test-manifest:1.4.3"
+    String composeUIManifest = "androidx.compose.ui:ui-test-manifest:1.5.0"
 
     /*
      * androidx
@@ -98,9 +98,9 @@ interface Deps {
      * navigation
      */
     //navigationFragmentKtx
-    String navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    String navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.6.0"
     //navigationUI
-    String navigationUI = "androidx.navigation:navigation-ui:2.5.3"
+    String navigationUI = "androidx.navigation:navigation-ui:2.6.0"
 
     //flowEventBus : https://github.com/biubiuqiu0/flow-event-bus
     String flowEventBus = "com.github.biubiuqiu0:flow-event-bus:0.0.2"
@@ -134,7 +134,7 @@ interface Deps {
     String accompanistWebView = "com.google.accompanist:accompanist-webview:0.30.1"
 
     //composeBom
-    String composeBom = "androidx.compose:compose-bom:2023.06.01"
+    String composeBom = "androidx.compose:compose-bom:2023.08.00"
     //composeUI
     String composeUI = "androidx.compose.ui:ui"
     //composePreview
@@ -298,7 +298,7 @@ interface Deps {
     String easyPhotos = "com.github.zhangls2014:EasyPhotos:andX-2.5.8"
 
     //tencentRTC
-    String tencentRTC = "com.tencent.liteav:LiteAVSDK_TRTC:11.3.0.13176"
+    String tencentRTC = "com.tencent.liteav:LiteAVSDK_TRTC:10.8.0.13052"
 
     //eventBus : https://github.com/greenrobot/EventBus
     String eventBus = "org.greenrobot:eventbus:3.3.1"
@@ -334,7 +334,7 @@ interface Deps {
     String timber = "com.jakewharton.timber:timber:5.0.1"
 
     //baseUtils : https://github.com/zhangls2014/BaseUtils
-    String baseUtils = "com.github.zhangls2014:BaseUtils:0.5.0"
+    String baseUtils = "com.github.zhangls2014:BaseUtils:0.5.1"
 
     //jsBridge : https://github.com/zhangls2014/JsBridge
     String jsBridge = "com.github.zhangls2014:JSBridge:1.1"

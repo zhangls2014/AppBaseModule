@@ -107,7 +107,7 @@ afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
-            create<MavenPublication>("product") {
+            create<MavenPublication>("release") {
                 // Applies the component for the release build variant.
                 from(components["release"])
 

@@ -1,0 +1,327 @@
+[versions]
+minSdk = "24"
+targetSdk = "33"
+compileSdk = "34"
+
+agp = "8.1.2"
+kotlin = "1.9.20"
+kotlin-ksp = "1.9.20-1.0.13"
+buildTool = "34.0.0"
+compose-bom = "2023.10.00"
+
+
+[libraries]
+# junit
+junit = { group = "junit", name = "junit", version = "4.13.2" }
+# runner
+runner = { group = "androidx.test", name = "runner", version = "1.5.2" }
+# extJunit
+extJunit = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
+# espresso
+espresso = { group = "androidx.test.espresso", name = "espresso-core", version = "3.5.1" }
+# composeUIJunit
+composeUIJunit = { group = "androidx.compose.ui", name = "ui-test-junit4", version = "1.4.3" }
+# composeUITooling
+composeUITooling = { group = "androidx.compose.ui", name = "ui-tooling", version = "1.5.3" }
+# composeUIManifest
+composeUIManifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version = "1.5.3" }
+
+# appcompat
+appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+# fragment
+fragment = { group = "androidx.fragment", name = "fragment-ktx", version = "1.6.0" }
+# activity
+activity = { group = "androidx.activity", name = "activity", version = "1.7.2" }
+# andAnnotations
+andAnnotations = { group = "androidx.annotation", name = "annotation", version = "1.6.0" }
+# materialDesign
+materialDesign = { group = "com.google.android.material", name = "material", version = "1.9.0" }
+# cardView
+cardView = { group = "androidx.cardview", name = "cardview", version = "1.0.0" }
+# recyclerView
+recyclerView = { group = "androidx.recyclerview", name = "recyclerview", version = "1.3.0" }
+# transition
+transition = { group = "androidx.transition", name = "transition", version = "1.4.1" }
+# constraintLayout
+constraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+# coreKtx
+coreKtx = { group = "androidx.core", name = "core-ktx", version = "1.10.1" }
+# preference
+preference = { group = "androidx.preference", name = "preference", version = "1.2.0" }
+# viewpager2
+viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version = "1.0.0" }
+# datastorePreferences
+datastorePreferences = { group = "androidx.datastore", name = "datastore-preferences", version = "1.0.0" }
+# datastore
+datastore = { group = "androidx.datastore", name = "datastore", version = "1.0.0" }
+# splashScreen
+splashScreen = { group = "androidx.core", name = "core-splashscreen", version = "1.0.1" }
+# media3UI
+media3UI = { group = "androidx.media3", name = "media3-ui", version = "1.1.0" }
+# media3Exoplayer
+media3Exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version = "1.1.0" }
+
+# lifecycleRuntime
+lifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version = "2.6.2" }
+# lifecycleCompose
+lifecycleCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version = "2.6.1" }
+# viewModel
+viewModel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version = "2.6.2" }
+
+# cameraXCore
+cameraXCore = { group = "androidx.camera", name = "camera-core", version = "1.2.3" }
+# cameraXCamera2
+cameraXCamera2 = { group = "androidx.camera", name = "camera-camera2", version = "1.2.3" }
+# cameraXLifecycle
+cameraXLifecycle = { group = "androidx.camera", name = "camera-lifecycle", version = "1.2.3" }
+# cameraXView
+cameraXView = { group = "androidx.camera", name = "camera-view", version = "1.2.3" }
+# cameraXExtensions
+cameraXExtensions = { group = "androidx.camera", name = "camera-extensions", version = "1.2.2" }
+
+# navigationFragmentKtx
+navigationFragmentKtx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version = "2.6.0" }
+# navigationUI
+navigationUI = { group = "androidx.navigation", name = "navigation-ui", version = "2.6.0" }
+
+# flowEventBus": "github.com/biubiuqiu0/flow-event-bus
+flowEventBus = { group = "com.github.biubiuqiu0", name = "flow-event-bus", version = "0.0.2" }
+
+# pagingRuntime
+pagingRuntime = { group = "androidx.paging", name = "paging-runtime-ktx", version = "3.1.1" }
+
+# flexBox ": "https://github.com/google/flexbox-layout
+flexBox = { group = "com.google.android", name = "flexbox", version = "2.0.0" }
+# gson ": "https://github.com/google/gson
+gson = { group = "com.google.code.gson", name = "gson", version = "2.10" }
+
+# coroutinesAndroid
+coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version = "1.7.3" }
+
+# composeActivity
+composeActivity = { group = "androidx.activity", name = "activity-compose", version = "1.7.2" }
+# composeConstraintLayout
+composeConstraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version = "1.0.1" }
+# composeNavigation
+composeNavigation = { group = "androidx.navigation", name = "navigation-compose", version = "2.6.0" }
+# accompanistSystemUiController
+accompanistSystemUiController = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version = "0.30.1" }
+# accompanistWebView
+accompanistWebView = { group = "com.google.accompanist", name = "accompanist-webview", version = "0.30.1" }
+
+# composeBom
+composeBom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+# composeUI
+composeUI = { group = "androidx.compose.ui", name = "ui" }
+# composePreview
+composePreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+# composeMaterial
+composeMaterial = { group = "androidx.compose.material", name = "material" }
+# composeMaterial3
+composeMaterial3 = { group = "androidx.compose.material3", name = "material3" }
+
+# appJoint ": "https://github.com/PrototypeZ/AppJoint/blob/master/README_zh.md
+appJoint = { group = "io.github.prototypez", name = "app-joint", version = "1.7" }
+# appJointCore
+appJointCore = { group = "io.github.prototypez", name = "app-joint-core", version = "1.7" }
+
+# retrofit2 ": "https://github.com/square/retrofit
+retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version = "2.9.0" }
+# retrofit2ConverterGson
+retrofit2ConverterGson = { group = "com.squareup.retrofit2", name = "converter-gson", version = "2.9.0" }
+# okHttp
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version = "4.11.0" }
+# okHttpLogging
+okHttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version = "4.11.0" }
+# okio
+okio = { group = "com.squareup.okio", name = "okio", version = "3.3.0" }
+
+# multiType
+multiType = { group = "com.drakeet.multitype", name = "multitype", version = "4.3.0" }
+# swipeRefreshLayout
+swipeRefreshLayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version = "1.1.0" }
+
+# slf4j
+slf4j = { group = "org.slf4j", name = "slf4j-api", version = "2.0.5" }
+
+# mavericks: https://github.com/airbnb/mavericks
+mavericks = { group = "com.airbnb.android", name = "mavericks", version = "3.0.5" }
+# mavericksNavigation
+mavericksNavigation = { group = "com.airbnb.android", name = "mavericks-navigation", version = "3.0.1" }
+# mavericksCompose
+mavericksCompose = { group = "com.airbnb.android", name = "mavericks-compose", version = "3.0.1" }
+
+# roomRuntime
+roomRuntime = { group = "androidx.room", name = "room-runtime", version = "2.5.1" }
+# roomCompiler
+roomCompiler = { group = "androidx.room", name = "room-compiler", version = "2.5.1" }
+# roomKtx: Kotlin Extensions and Coroutines support for Room
+roomKtx = { group = "androidx.room", name = "room-ktx", version = "2.5.1" }
+# roomCoroutines
+roomCoroutines = { group = "androidx.room", name = "room-coroutines", version = "2.1.0-alpha04" }
+# roomPaging
+roomPaging = { group = "androidx.room", name = "room-paging", version = "2.5.1" }
+
+# tencentIM
+tencentIM = { group = "com.tencent.imsdk", name = "imsdk", version = "5.1.66" }
+
+# utilcodex
+utilcodex = { group = "com.blankj", name = "utilcodex", version = "1.31.1" }
+
+# coil : https://github.com/coil-kt/coil
+coil = { group = "io.coil-kt", name = "coil", version = "2.4.0" }
+# coilBase
+coilBase = { group = "io.coil-kt", name = "coil-base", version = "2.4.0" }
+# coilGif
+coilGif = { group = "io.coil-kt", name = "coil-gif", version = "2.4.0" }
+# coilSVG
+coilSVG = { group = "io.coil-kt", name = "coil-svg", version = "2.4.0" }
+# composeCoil
+composeCoil = { group = "io.coil-kt", name = "coil-compose", version = "2.4.0" }
+
+# glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.14.2" }
+# glideCompiler
+glideCompiler = { group = "com.github.bumptech.glide", name = "compiler", version = "4.14.2" }
+
+# XXPermissions ", version = " https", version = "# github.com/getActivity/XXPermissions
+xxpermissions = { group = "com.github.getActivity", name = "XXPermissions", version = "18.3" }
+
+# compressor : https://github.com/zetbaitsu/Compressor
+compressor = { group = "id.zelory", name = "compressor", version = "3.0.1" }
+
+#  uCrop : https://github.com/Yalantis/uCrop
+uCrop = { group = "com.github.yalantis", name = "ucrop", version = "2.2.8" }
+
+# bugly
+bugly = { group = "com.tencent.bugly", name = "crashreport", version = "4.1.9.3" }
+# buglyNDK
+buglyNDK = { group = "com.tencent.bugly", name = "nativecrashreport", version = "3.9.2" }
+
+# tencentX5 : https://x5.tencent.com/docs/access.html
+tencentX5 = { group = "com.tencent.tbs", name = "tbssdk", version = "44181" }
+
+# weChatOpenSDK : https://developers.weixin.qq.com/doc/oplatform/Downloads/Android_Resource.html
+weChatOpenSDK = { group = "com.tencent.mm.opensdk", name = "wechat-sdk-android-without-mta", version = "6.8.0" }
+
+# ZXingLite : https://github.com/jenly1314/ZXingLite
+zxingLite = { group = "com.github.jenly1314", name = "zxing-lite", version = "2.1.1" }
+
+# MLKitCore : https://github.com/jenly1314/MLKit，Camera核心 (*必须项)
+mlKitCore = { group = "com.github.jenly1314.MLKit", name = "mlkit-camera-core", version = "1.0.3" }
+
+# MLKitBarcode : https://github.com/jenly1314/MLKit，条码识别 (可选项)
+mlKitBarcode = { group = "com.github.jenly1314.MLKit", name = "mlkit-barcode-scanning", version = "1.0.3" }
+
+# pdfViewer
+pdfViewer = { group = "com.github.barteksc", name = "android-pdf-viewer", version = "3.2.0-beta.1" }
+# pdfium
+pdfium = { group = "com.github.barteksc", name = "pdfium-android", version = "1.9.0" }
+
+# exoPlayer : https://github.com/google/ExoPlayer
+exoPlayer = { group = "com.google.android.exoplayer", name = "exoplayer", version = "2.18.5" }
+# exoCore : https://github.com/google/ExoPlayer
+exoCore = { group = "com.google.android.exoplayer", name = "exoplayer-core", version = "2.18.5" }
+# exoUI : https://github.com/google/ExoPlayer
+exoUI = { group = "com.google.android.exoplayer", name = "exoplayer-ui", version = "2.18.5" }
+
+# discreteScrollview : https://github.com/yarolegovich/DiscreteScrollView
+discreteScrollview = { group = "com.yarolegovich", name = "discrete-scrollview", version = "1.4.9" }
+# easySwipeMenuLayout : https://github.com/anzaizai/EasySwipeMenuLayout
+easySwipeMenuLayout = { group = "com.github.anzaizai", name = "EasySwipeMenuLayout", version = "1.1.4" }
+# swipeDelMenuLayout ", name = "侧滑删除 https://github.com/mcxtzhang/SwipeDelMenuLayout/blob/master/README-cn.md
+swipeDelMenuLayout = { group = "com.github.mcxtzhang", name = "SwipeDelMenuLayout", version = "V1.3.0" }
+# swipeBack
+swipeBack = { group = "n.simonlee.widget", name = "swipeback", version = "1.0.15" }
+# banner : https://github.com/youth5201314/banner
+banner = { group = "io.github.youth5201314", name = "banner", version = "2.2.2" }
+# photoView : https://github.com/chrisbanes/PhotoView
+photoView = { group = "com.github.chrisbanes", name = "PhotoView", version = "2.3.0" }
+# androidPickerView : 时间,地址选择器 https://github.com/Bigkoo/Android-PickerView
+androidPickerView = { group = "com.contrarywind", name = "Android-PickerView", version = "4.1.9" }
+# switchButton : https://github.com/kyleduo/SwitchButton
+switchButton = { group = "com.kyleduo.switchbutton", name = "library", version = "2.1.0" }
+# easyPhotos ", version = " https://github.com/zhangls2014/EasyPhotos
+easyPhotos = { group = "com.github.zhangls2014", name = "EasyPhotos", version = "andX-2.5.8" }
+
+# tencentRTC
+tencentRTC = { group = "com.tencent.liteav", name = "LiteAVSDK_TRTC", version = "10.8.0.13052" }
+
+# eventBus : https://github.com/greenrobot/EventBus
+eventBus = { group = "org.greenrobot", name = "eventbus", version = "3.3.1" }
+
+# andPermission : https://github.com/yanzhenjie/AndPermission
+andPermission = { group = "com.yanzhenjie", name = "permission", version = "2.0.3" }
+
+# mmkv : 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
+mmkv = { group = "com.tencent", name = "mmkv-static", version = "1.2.8" }
+
+# betterLinkMovementMethod : 自定义 LinkMovementMethod，支持点击和长按操作
+betterLinkMovementMethod = { group = "me.saket", name = "better-link-movement-method", version = "2.2.0" }
+
+# AutoSize ", version = " https://github.com/JessYanCoding/AndroidAutoSize
+autoSize = { group = "me.jessyan", name = "autosize", version = "1.2.0" }
+
+# FitAndroid8 : Android 7/8 FileProvider适配 https://github.com/steven2947/FitAndroid8
+fitAndroid8 = { group = "com.github.steven2947", name = "FitAndroid8", version = "0.5.0" }
+
+# leakCanaryAndroid : https://github.com/square/leakcanary
+leakCanaryAndroid = { group = "com.squareup.leakcanary", name = "leakcanary-android", version = "2.12" }
+
+# blockCanaryAndroid : 卡顿监控和提示 https://github.com/markzhai/AndroidPerformanceMonitor
+blockCanaryAndroid = { group = "com.github.markzhai", name = "blockcanary-android", version = "1.5.0" }
+
+# timber
+timber = { group = "com.jakewharton.timber", name = "timber", version = "5.0.1" }
+
+# baseUtils : https://github.com/zhangls2014/BaseUtils
+baseUtils = { group = "com.github.zhangls2014", name = "BaseUtils", version = "0.5.1" }
+
+# jsBridge : https://github.com/zhangls2014/JsBridge
+jsBridge = { group = "com.github.zhangls2014", name = "JSBridge", version = "1.1" }
+
+# huaweiFaceShapePointModel
+huaweiFaceShapePointModel = { group = "com.huawei.hms", name = "ml-computer-vision-face-shape-point-model", version = "3.7.0.301" }
+# huaweiFace
+huaweiFace = { group = "com.huawei.hms", name = "ml-computer-vision-face", version = "3.7.0.301" }
+
+# deviceName : https://github.com/jaredrummler/AndroidDeviceNames
+deviceName = { group = "com.jaredrummler", name = "android-device-names", version = "2.1.1" }
+
+# amapLocation : 高德地图定位 SDK
+amapLocation = { group = "com.amap.api", name = "location", version = "6.2.0" }
+
+# aliOSS
+aliOSS = { group = "com.aliyun.dpa", name = "oss-android-sdk", version = "2.9.11" }
+
+# huaweiOBS
+huaweiOBS = { group = "com.huaweicloud", name = "esdk-obs-android", version = "3.22.3" }
+
+# logan : https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android
+logan = { group = "com.dianping.android.sdk", name = "logan", version = "1.2.4" }
+
+# glog : https://github.com/huolalatech/hll-wp-glog/blob/master/README-zh.md
+glog = { group = "cn.huolala.glog.android", name = "glog-android-static", version = "1.0.1" }
+
+# baiduLocation
+baiduLocation = { group = "com.baidu.lbsyun", name = "BaiduMapSDK_Location", version = "9.3.7" }
+
+# tencentLocation
+tencentLocation = { group = "com.tencent.map.geolocation", name = "TencentLocationSdk-openplatform", version = "7.4.9.5" }
+
+# ffmpegCommand : https://github.com/AnJoiner/FFmpegCommand
+ffmpegCommand = { group = "com.github.AnJoiner", name = "FFmpegCommand", version = "1.2.2-lite" }
+
+# protobuf
+protobuf = { group = "com.google.protobuf", name = "protobuf-lite", version = "3.0.1" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "kotlin-ksp" }
+navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version = "2.7.5" }
+protobuf = { id = "com.google.protobuf", version = "0.9.4" }
+
+[bundles]

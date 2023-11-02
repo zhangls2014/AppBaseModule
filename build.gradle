@@ -15,13 +15,3 @@ versions {
     inputFile = "$rootDir/versions.gradle"
     outputFile = "$rootDir/version-plugin/src/main/groovy/Versions.groovy"
 }
-
-pluginManager.withPlugin("org.jetbrains.kotlin.android") {
-    kotlin {
-        sourceSets.configureEach {
-            languageSettings {
-                languageVersion = "2.0"
-            }
-        }
-    }
-}

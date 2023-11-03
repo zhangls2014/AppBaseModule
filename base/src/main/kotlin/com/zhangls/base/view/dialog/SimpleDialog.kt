@@ -87,10 +87,10 @@ class SimpleDialog : AppCompatDialogFragment() {
             val negativeButton = it.findViewById<TextView>(R.id.mbNegative)
 
             with(requireArguments()) {
-                it.findViewById<TextView>(R.id.tvTitle).text = get(KEY_TITLE) as? CharSequence
-                it.findViewById<TextView>(R.id.tvContent).text = get(KEY_CONTENT) as? CharSequence
-                positiveButton.text = get(KEY_POSITIVE_TEXT) as? CharSequence
-                val negativeText = get(KEY_NEGATIVE_TEXT) as? CharSequence
+                it.findViewById<TextView>(R.id.tvTitle).text = getString(KEY_TITLE)
+                it.findViewById<TextView>(R.id.tvContent).text = getString(KEY_CONTENT)
+                positiveButton.text = getString(KEY_POSITIVE_TEXT)
+                val negativeText = getString(KEY_NEGATIVE_TEXT)
                 if (negativeText.isNullOrEmpty()) {
                     negativeButton.isVisible = false
                 } else {

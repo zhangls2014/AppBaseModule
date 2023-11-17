@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.ksp)
     alias(libs.plugins.protobuf)
     id("maven-publish")
 }
@@ -21,7 +20,7 @@ val gitVersionCode by lazy {
 val gitVersionTag by lazy {
     val stdout = org.apache.commons.io.output.ByteArrayOutputStream()
     rootProject.exec {
-        val cmd = "git rev-list HEAD --first-parent --count".split(" ")
+        val cmd = "git describe --tags".split(" ")
         commandLine(cmd)
         standardOutput = stdout
     }
@@ -46,23 +45,25 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
-    kotlin {
-        jvmToolchain(11)
-    }
+
     lint {
         disable.add("SpUsage")
         disable.add("RtlHardcoded")
     }
+
     buildFeatures {
         buildConfig = true
     }
+
     packaging {
         jniLibs {
             pickFirsts.add("lib/arm64-v8a/libc++_shared.so")

@@ -115,6 +115,20 @@ object LogTools {
     }
 
     @JvmStatic
+    fun delete(path: String) {
+        if (::glog.isInitialized) {
+            glog.removeArchiveFile(path)
+        }
+    }
+
+    @JvmStatic
+    fun deleteAll() {
+        if (::glog.isInitialized) {
+            glog.removeAll()
+        }
+    }
+
+    @JvmStatic
     fun convertToJsonFile(path: String, outputPath: String, writedCallback: (() -> Unit)? = null) {
         runCatching {
             glog.openReader(path)

@@ -3,7 +3,7 @@ minSdk = "24"
 targetSdk = "33"
 compileSdk = "34"
 
-# kotlin-ksp、compose-comiler 与 kotlin 版本是相关联的。如果
+# kotlin-ksp、compose-comiler 与 kotlin 版本相关联
 agp = "8.1.2"
 kotlin = "1.9.10"
 kotlin-ksp = "1.9.10-1.0.13"
@@ -251,9 +251,6 @@ tencentRTC = { group = "com.tencent.liteav", name = "LiteAVSDK_TRTC", version = 
 
 # eventBus : https://github.com/greenrobot/EventBus
 eventBus = { group = "org.greenrobot", name = "eventbus", version = "3.3.1" }
-
-# andPermission : https://github.com/yanzhenjie/AndPermission
-andPermission = { group = "com.yanzhenjie", name = "permission", version = "2.0.3" }
 
 # mmkv : 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
 mmkv = { group = "com.tencent", name = "mmkv-static", version = "1.2.8" }

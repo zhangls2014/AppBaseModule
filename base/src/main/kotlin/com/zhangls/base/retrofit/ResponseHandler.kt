@@ -19,7 +19,9 @@ class ResponseHandler {
      */
     suspend fun <Model : Any> responseHandler(combine: suspend () -> ResponseResult<Model>): ResponseResult<Model> {
         return try {
-            combine()
+            val response = combine()
+            LogTools.i("ResponseHandler", "ResponseResult: $response")
+            response
         } catch (exception: HttpException) {
             exception.printStackTrace()
             LogTools.e("ResponseHandler", exception.toString())

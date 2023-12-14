@@ -2,8 +2,8 @@ package com.zhangls.base.extension
 
 import android.view.View
 import android.view.Window
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.WindowManager
+import androidx.annotation.ColorInt
 import androidx.core.view.WindowInsetsControllerCompat
 
 /**
@@ -34,4 +34,10 @@ fun Window.showSystemBars() {
 
 fun Window.lightStatusBars(view: View, isLightStatusBars: Boolean) {
     WindowInsetsControllerCompat(this, view).isAppearanceLightStatusBars = isLightStatusBars
+}
+
+fun Window.statusBarColor(@ColorInt color: Int) {
+    addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+    clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+    statusBarColor = color
 }

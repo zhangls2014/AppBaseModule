@@ -8,13 +8,13 @@ package com.zhangls.base.data
  * @author zhangls
  */
 sealed class TipsEvent {
+    /**
+     * 单按钮弹框
+     */
     data class ShowDialog(
-        val title: String,
+        val title: String = "提示",
         val content: String,
-        val positiveText: String,
-        val negativeText: String? = null,
-        // 用于标注 Dialog 事件的类型
-        val action: Int = 0
+        val positiveText: String = "确定"
     ) : TipsEvent()
 
     data class SnackBar(val text: String, val shortTime: Boolean = true) : TipsEvent()
@@ -22,8 +22,8 @@ sealed class TipsEvent {
     data class Loading(val display: Boolean, val text: String = "加载中") : TipsEvent()
 }
 
-fun String.snack(shortTime: Boolean) = TipsEvent.SnackBar(this, shortTime)
+fun String.snack(shortTime: Boolean = true) = TipsEvent.SnackBar(this, shortTime)
 
-fun String.toast(shortTime: Boolean) = TipsEvent.Toast(this, shortTime)
+fun String.toast(shortTime: Boolean = true) = TipsEvent.Toast(this, shortTime)
 
 fun String.loading(display: Boolean) = TipsEvent.Loading(display, this)

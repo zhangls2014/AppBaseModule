@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.protobuf)
     id("maven-publish")
 }
 
@@ -98,10 +97,6 @@ dependencies {
     api(libs.retrofit2ConverterGson)
     api(libs.okHttpLogging)
     api(libs.utilcodex)
-    // 日志框架
-    api(libs.glog)
-    api(libs.timber)
-    api(libs.protobuf)
 }
 
 afterEvaluate {
@@ -115,26 +110,6 @@ afterEvaluate {
                 groupId = "com.zhangls"
                 artifactId = "base"
                 version = gitVersionTag
-            }
-        }
-    }
-}
-
-protobuf {
-    protoc {
-        // 配置 protoc 编译器
-        artifact = "com.google.protobuf:protoc:3.21.12"
-    }
-    plugins {
-        create("javalite") {
-            artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0"
-        }
-    }
-    // 配置生成目录，编译后会在 build 的目录下生成对应的 java 文件
-    generateProtoTasks {
-        all().forEach {
-            it.plugins {
-                create("javalite")
             }
         }
     }

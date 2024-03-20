@@ -20,27 +20,26 @@ class ResponseHandler {
     suspend fun <Model : Any> responseHandler(combine: suspend () -> ResponseResult<Model>): ResponseResult<Model> {
         return try {
             val response = combine()
-            LogUtils.iTag("ResponseHandler", "ResponseResult: $response")
             response
         } catch (exception: HttpException) {
             exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception.toString())
+            LogUtils.eTag("ResponseHandler", exception)
             ResponseResult.Error(exception.code(), "请求异常[$exception]")
         } catch (exception: JsonSyntaxException) {
             exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception.toString())
+            LogUtils.eTag("ResponseHandler", exception)
             ResponseResult.Error(UNKNOWN_ERROR, "返回数据解析异常[$exception]")
         } catch (exception: MalformedJsonException) {
             exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception.toString())
+            LogUtils.eTag("ResponseHandler", exception)
             ResponseResult.Error(UNKNOWN_ERROR, "返回数据解析异常[$exception]")
         } catch (exception: ResponseException) {
             exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception.toString())
+            LogUtils.eTag("ResponseHandler", exception)
             ResponseResult.Error(exception.code, "请求异常[$exception]")
         } catch (exception: Exception) {
             exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception.toString())
+            LogUtils.eTag("ResponseHandler", exception)
             ResponseResult.Error(UNKNOWN_ERROR, "未知异常[$exception]")
         }
     }

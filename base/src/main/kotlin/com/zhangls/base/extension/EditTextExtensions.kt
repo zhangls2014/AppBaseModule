@@ -2,8 +2,6 @@
 
 package com.zhangls.base.extension
 
-import android.content.Context
-import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 
@@ -68,20 +66,4 @@ fun EditText.decimalPlaceLimit(place: Int = DECIMAL_PLACE) {
             }
         }
     }
-}
-
-/**
- * 打开软键盘
- */
-fun EditText.openKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-}
-
-/**
- * 关闭软键盘
- */
-fun EditText.closeKeyboard() {
-    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(this.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
 }

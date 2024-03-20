@@ -224,31 +224,30 @@ class RandomStringUtils {
    */
   @JvmOverloads
   fun random(
-    count: Int, start: Int, end: Int, letters: Boolean, numbers: Boolean,
+    size: Int, start: Int, end: Int, letters: Boolean, numbers: Boolean,
     chars: CharArray? = null, random: Random = RANDOM
   ): String {
-    var count = count
-    var start = start
-    var end = end
+    var count = size
+    var startPos = start
+    var endPos = end
     if (count == 0) {
       return ""
     } else require(count >= 0) { "Requested random string length $count is less than 0." }
-    if (start == 0 && end == 0) {
-      end = 'z'.code + 1
-      start = ' '.code
+    if (startPos == 0 && endPos == 0) {
+      endPos = 'z'.code + 1
+      startPos = ' '.code
       if (!letters && !numbers) {
-        start = 0
-        end = Int.MAX_VALUE
+        startPos = 0
+        endPos = Int.MAX_VALUE
       }
     }
     val buffer = CharArray(count)
-    val gap = end - start
+    val gap = endPos - startPos
     while (count-- != 0) {
-      var ch: Char
-      ch = if (chars == null) {
-        (random.nextInt(gap) + start).toChar()
+      val ch: Char = if (chars == null) {
+        (random.nextInt(gap) + startPos).toChar()
       } else {
-        chars[random.nextInt(gap) + start]
+        chars[random.nextInt(gap) + startPos]
       }
       if (letters && Character.isLetter(ch)
         || numbers && Character.isDigit(ch)

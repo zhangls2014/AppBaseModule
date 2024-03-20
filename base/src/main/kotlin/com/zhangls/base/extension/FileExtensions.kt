@@ -10,8 +10,15 @@ import android.os.Environment
 import android.os.StatFs
 import android.os.storage.StorageManager
 import androidx.annotation.IntRange
-import kotlinx.coroutines.Dispatchers
-import java.io.*
+import java.io.BufferedInputStream
+import java.io.BufferedOutputStream
+import java.io.ByteArrayOutputStream
+import java.io.Closeable
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.RandomAccessFile
 import java.math.RoundingMode
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -62,55 +69,6 @@ fun File.saveTextValue(content: String, append: Boolean): Boolean {
         false
     }
 }
-
-/**
- * 将 Assets 文件夹下 /db 的本地库拷贝到 /data/data/ 下
- */
-fun copyDbFile(context: Context, tabName: String) = with(Dispatchers.IO) {
-    var inputStream: InputStream? = null
-    var out: FileOutputStream? = null
-    try {
-        // 创建文件夹
-        val fileParent = File("${context.filesDir.path}/databases/")
-        if (fileParent.exists()) {
-            // 存在则不拷贝
-            return
-        } else {
-            fileParent.mkdirs()
-        }
-
-        val file = File("${fileParent.path}/$tabName")
-        // 创建新的文件
-        if (file.exists().not()) {
-            val createNewFile = file.createNewFile()
-            if (createNewFile.not()) {
-                return
-            }
-        } else {
-            return
-        }
-
-        // 从 assets 目录下复制
-        inputStream = context.assets.open(tabName)
-        out = FileOutputStream(fileParent)
-        var length: Int
-        val buf = ByteArray(1024)
-        while (inputStream.read(buf).also { length = it } != -1) {
-            out.write(buf, 0, length)
-        }
-        out.flush()
-    } catch (e: SecurityException) {
-        e.printStackTrace()
-    } catch (e: FileNotFoundException) {
-        e.printStackTrace()
-    } catch (e: IOException) {
-        e.printStackTrace()
-    } finally {
-        inputStream?.closeQuietly()
-        out?.closeQuietly()
-    }
-}
-
 
 /**
  * 字节数转以unit为单位的size
@@ -247,7 +205,6 @@ val File.encodeMD5: String
 /**
  * 获取空闲的存储空间字节
  */
-@Suppress("Deprecation", "BlockingMethodInNonBlockingContext")
 suspend fun Context.getFreeBytes(): Long {
     return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
         val storageStatsManager =
@@ -272,8 +229,7 @@ suspend fun Context.getFreeBytes(): Long {
 /**
  * 获取空闲的存储空间字节
  */
-@Suppress("Deprecation", "BlockingMethodInNonBlockingContext")
-suspend fun Context.getTotalBytes(): Long {
+fun Context.getTotalBytes(): Long {
     return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
         val storageStatsManager =
             getSystemService(Context.STORAGE_STATS_SERVICE) as StorageStatsManager
@@ -297,8 +253,7 @@ suspend fun Context.getTotalBytes(): Long {
 /**
  * 获取空闲的存储空间字节
  */
-@Suppress("Deprecation", "BlockingMethodInNonBlockingContext")
-suspend fun Context.getAllocatableBytes(): Long {
+fun Context.getAllocatableBytes(): Long {
     return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
         val storageManager = getSystemService(Context.STORAGE_SERVICE) as StorageManager
         storageManager.getAllocatableBytes(StorageManager.UUID_DEFAULT)

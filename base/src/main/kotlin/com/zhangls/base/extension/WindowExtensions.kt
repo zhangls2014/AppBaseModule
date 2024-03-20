@@ -36,6 +36,7 @@ fun Window.lightStatusBars(view: View, isLightStatusBars: Boolean) {
     WindowInsetsControllerCompat(this, view).isAppearanceLightStatusBars = isLightStatusBars
 }
 
+@Suppress("DEPRECATION")
 fun Window.statusBarColor(@ColorInt color: Int) {
     addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
     clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)

@@ -1,6 +1,5 @@
 package com.zhangls.base.view.selector
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.zhangls.base.R
+import com.zhangls.base.extension.dp
 
 
 /**
@@ -49,8 +49,6 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
     }
     var checkChangeListener: OnCheckChangeListener? = null
 
-    var cancelCallback: (() -> Unit)? = null
-
 
     companion object {
         fun newInstance(): BottomSelector = BottomSelector()
@@ -65,7 +63,7 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
             it.layoutManager = LinearLayoutManager(context)
             val divider = MaterialDividerItemDecoration(it.context, MaterialDividerItemDecoration.VERTICAL).apply {
                 setDividerColorResource(it.context, R.color.base_grey_divider)
-                dividerThickness = 1
+                dividerThickness = 1.dp
             }
             it.addItemDecoration(divider)
             it.adapter = selectorAdapter
@@ -76,17 +74,13 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
         }
     }
 
-    override fun onCancel(dialog: DialogInterface) {
-        cancelCallback?.invoke()
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         recyclerView?.adapter = null
         checkChangeListener = null
     }
 
-    fun initItems(items: ArrayList<SelectorItemModel>): BottomSelector {
+    fun initItems(items: List<SelectorItemModel>): BottomSelector {
         if (this::selectItems.isInitialized.not()) {
             selectItems = items
         }

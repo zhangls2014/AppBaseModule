@@ -229,10 +229,9 @@ suspend fun Context.getFreeBytes(): Long {
 /**
  * 获取空闲的存储空间字节
  */
-fun Context.getTotalBytes(): Long {
+suspend fun Context.getTotalBytes(): Long {
     return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-        val storageStatsManager =
-            getSystemService(Context.STORAGE_STATS_SERVICE) as StorageStatsManager
+        val storageStatsManager = getSystemService(Context.STORAGE_STATS_SERVICE) as StorageStatsManager
         storageStatsManager.getTotalBytes(StorageManager.UUID_DEFAULT)
     } else {
         if (Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED) {
@@ -253,7 +252,7 @@ fun Context.getTotalBytes(): Long {
 /**
  * 获取空闲的存储空间字节
  */
-fun Context.getAllocatableBytes(): Long {
+suspend fun Context.getAllocatableBytes(): Long {
     return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
         val storageManager = getSystemService(Context.STORAGE_SERVICE) as StorageManager
         storageManager.getAllocatableBytes(StorageManager.UUID_DEFAULT)

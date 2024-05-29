@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 /**
  * @author zhangls
  */
-fun LifecycleOwner.launchWhenCreated(block: () -> Unit) {
+fun LifecycleOwner.launchWhenCreated(block: suspend () -> Unit) {
     lifecycleScope.launch {
         repeatOnLifecycle(Lifecycle.State.CREATED) {
             block()
@@ -20,7 +20,7 @@ fun LifecycleOwner.launchWhenCreated(block: () -> Unit) {
     }
 }
 
-fun LifecycleOwner.launchWhenStarted(block: () -> Unit) {
+fun LifecycleOwner.launchWhenStarted(block: suspend () -> Unit) {
     lifecycleScope.launch {
         repeatOnLifecycle(Lifecycle.State.STARTED) {
             block()
@@ -29,7 +29,7 @@ fun LifecycleOwner.launchWhenStarted(block: () -> Unit) {
     }
 }
 
-fun LifecycleOwner.launchWhenResumed(block: () -> Unit) {
+fun LifecycleOwner.launchWhenResumed(block: suspend () -> Unit) {
     lifecycleScope.launch {
         repeatOnLifecycle(Lifecycle.State.RESUMED) {
             block()

@@ -1,9 +1,11 @@
 package com.zhangls.base.view.selector
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +13,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.zhangls.base.R
 import com.zhangls.base.extension.dp
+import com.zhangls.base.extension.launchWhenResumed
+import com.zhangls.base.extension.launchWhenStarted
 
 
 /**
@@ -71,6 +75,27 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
             if (this::selectItems.isInitialized) {
                 selectorAdapter.submitList(selectItems)
             }
+        }
+    }
+
+    override fun onCancel(dialog: DialogInterface) {
+        super.onCancel(dialog)
+        dismiss()
+    }
+
+    fun show(manager: FragmentManager) {
+        show(manager, null)
+    }
+
+    override fun show(manager: FragmentManager, tag: String?) {
+        viewLifecycleOwner.launchWhenStarted {
+            super.show(manager, tag)
+        }
+    }
+
+    override fun dismiss() {
+        viewLifecycleOwner.launchWhenResumed {
+            super.dismiss()
         }
     }
 

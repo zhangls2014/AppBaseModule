@@ -1,6 +1,7 @@
 package com.zhangls.base.view.dialog
 
 import android.app.Dialog
+import android.content.DialogInterface
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +16,8 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
 import com.zhangls.base.R
 import com.zhangls.base.extension.hideSystemBars
+import com.zhangls.base.extension.launchWhenResumed
+import com.zhangls.base.extension.launchWhenStarted
 import com.zhangls.base.extension.onClick
 
 /**
@@ -145,7 +148,24 @@ class SimpleDialog : AppCompatDialogFragment() {
         }
     }
 
+    override fun onCancel(dialog: DialogInterface) {
+        super.onCancel(dialog)
+        dismiss()
+    }
+
     fun show(manager: FragmentManager) {
-        super.show(manager, null)
+        show(manager, null)
+    }
+
+    override fun show(manager: FragmentManager, tag: String?) {
+        viewLifecycleOwner.launchWhenStarted {
+            super.show(manager, tag)
+        }
+    }
+
+    override fun dismiss() {
+        viewLifecycleOwner.launchWhenResumed {
+            super.dismiss()
+        }
     }
 }

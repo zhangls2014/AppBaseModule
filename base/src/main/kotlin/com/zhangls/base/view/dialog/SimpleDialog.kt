@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.zhangls.base.R
 import com.zhangls.base.extension.hideSystemBars
@@ -153,18 +154,23 @@ class SimpleDialog : AppCompatDialogFragment() {
         dismiss()
     }
 
-    fun show(manager: FragmentManager) {
-        show(manager, null)
-    }
-
-    override fun show(manager: FragmentManager, tag: String?) {
-        viewLifecycleOwner.launchWhenStarted {
-            super.show(manager, tag)
+    fun show(fragment: Fragment, tag: String? = null) {
+        fragment.viewLifecycleOwner.launchWhenStarted {
+            super.show(fragment.childFragmentManager, tag)
         }
     }
 
+    @Deprecated(
+        message = "请使用 show(fragment: Fragment, tag: String?) 方法，避免生命周期错误",
+        level = DeprecationLevel.WARNING,
+        replaceWith = ReplaceWith("show(fragment, tag)", "androidx.fragment.app.Fragment")
+    )
+    override fun show(manager: FragmentManager, tag: String?) {
+        super.show(manager, tag)
+    }
+
     override fun dismiss() {
-        viewLifecycleOwner.launchWhenResumed {
+        launchWhenResumed {
             super.dismiss()
         }
     }

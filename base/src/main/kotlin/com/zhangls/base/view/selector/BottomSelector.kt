@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,18 +84,23 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
         dismiss()
     }
 
-    fun show(manager: FragmentManager) {
-        show(manager, null)
-    }
-
-    override fun show(manager: FragmentManager, tag: String?) {
-        viewLifecycleOwner.launchWhenStarted {
-            super.show(manager, tag)
+    fun show(fragment: Fragment, tag: String? = null) {
+        fragment.viewLifecycleOwner.launchWhenStarted {
+            super.show(fragment.childFragmentManager, tag)
         }
     }
 
+    @Deprecated(
+        message = "请使用 show(fragment: Fragment, tag: String?) 方法，避免生命周期错误",
+        level = DeprecationLevel.WARNING,
+        replaceWith = ReplaceWith("show(fragment, tag)", "androidx.fragment.app.Fragment")
+    )
+    override fun show(manager: FragmentManager, tag: String?) {
+        super.show(manager, tag)
+    }
+
     override fun dismiss() {
-        viewLifecycleOwner.launchWhenResumed {
+        launchWhenResumed {
             super.dismiss()
         }
     }

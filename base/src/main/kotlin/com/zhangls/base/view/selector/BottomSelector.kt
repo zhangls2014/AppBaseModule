@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -81,26 +80,17 @@ class BottomSelector private constructor() : BottomSheetDialogFragment() {
 
     override fun onCancel(dialog: DialogInterface) {
         super.onCancel(dialog)
-        dismiss()
+        super.dismiss()
     }
 
     fun show(fragment: Fragment, tag: String? = null) {
-        fragment.viewLifecycleOwner.launchWhenStarted {
+        fragment.launchWhenStarted {
             super.show(fragment.childFragmentManager, tag)
         }
     }
 
-    @Deprecated(
-        message = "请使用 show(fragment: Fragment, tag: String?) 方法，避免生命周期错误",
-        level = DeprecationLevel.WARNING,
-        replaceWith = ReplaceWith("show(fragment, tag)", "androidx.fragment.app.Fragment")
-    )
-    override fun show(manager: FragmentManager, tag: String?) {
-        super.show(manager, tag)
-    }
-
-    override fun dismiss() {
-        launchWhenResumed {
+    fun dismiss(fragment: Fragment) {
+        fragment.launchWhenResumed {
             super.dismiss()
         }
     }

@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.zhangls.base.R
 import com.zhangls.base.extension.hideSystemBars
 import com.zhangls.base.extension.launchWhenResumed
@@ -151,26 +150,17 @@ class SimpleDialog : AppCompatDialogFragment() {
 
     override fun onCancel(dialog: DialogInterface) {
         super.onCancel(dialog)
-        dismiss()
+        super.dismiss()
     }
 
     fun show(fragment: Fragment, tag: String? = null) {
-        fragment.viewLifecycleOwner.launchWhenStarted {
+        fragment.launchWhenStarted {
             super.show(fragment.childFragmentManager, tag)
         }
     }
 
-    @Deprecated(
-        message = "请使用 show(fragment: Fragment, tag: String?) 方法，避免生命周期错误",
-        level = DeprecationLevel.WARNING,
-        replaceWith = ReplaceWith("show(fragment, tag)", "androidx.fragment.app.Fragment")
-    )
-    override fun show(manager: FragmentManager, tag: String?) {
-        super.show(manager, tag)
-    }
-
-    override fun dismiss() {
-        launchWhenResumed {
+    fun dismiss(fragment: Fragment) {
+        fragment.launchWhenResumed {
             super.dismiss()
         }
     }

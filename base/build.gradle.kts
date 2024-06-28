@@ -88,6 +88,8 @@ dependencies {
     api(libs.coreKtx)
     api(libs.materialDesign)
     api(libs.constraintLayout)
+    api(libs.lifecycleRuntime)
+    api(libs.activity)
     api(libs.navigationFragmentKtx)
     api(libs.datastorePreferences)
 

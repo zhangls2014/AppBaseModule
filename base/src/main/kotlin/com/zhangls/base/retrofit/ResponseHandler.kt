@@ -6,6 +6,7 @@ import com.google.gson.stream.MalformedJsonException
 import com.zhangls.base.retrofit.common.ResponseException
 import com.zhangls.base.retrofit.common.ResponseResult
 import retrofit2.HttpException
+import java.net.UnknownHostException
 
 /**
  * 统一对接口回调进行处理
@@ -21,26 +22,18 @@ class ResponseHandler {
         return try {
             val response = combine()
             response
-        } catch (exception: HttpException) {
-            exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception)
-            ResponseResult.Error(exception.code(), "请求异常[$exception]")
-        } catch (exception: JsonSyntaxException) {
-            exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception)
-            ResponseResult.Error(UNKNOWN_ERROR, "返回数据解析异常[$exception]")
-        } catch (exception: MalformedJsonException) {
-            exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception)
-            ResponseResult.Error(UNKNOWN_ERROR, "返回数据解析异常[$exception]")
-        } catch (exception: ResponseException) {
-            exception.printStackTrace()
-            LogUtils.eTag("ResponseHandler", exception)
-            ResponseResult.Error(exception.code, "请求异常[$exception]")
         } catch (exception: Exception) {
             exception.printStackTrace()
             LogUtils.eTag("ResponseHandler", exception)
-            ResponseResult.Error(UNKNOWN_ERROR, "未知异常[$exception]")
+
+            val description = when (exception) {
+                is HttpException, is ResponseException -> "请求异常"
+                is JsonSyntaxException, is MalformedJsonException -> "返回数据解析异常"
+                is UnknownHostException -> "未能找到使用指定主机名的服务器"
+                else -> "未知异常"
+            }
+
+            ResponseResult.Error(UNKNOWN_ERROR, "$description[$exception]")
         }
     }
 }
